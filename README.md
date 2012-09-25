@@ -256,7 +256,7 @@ canvas.fillPokerSymbol   ([x, y[, size[, symbol]]])
 
 =================
 
-## Draw crown
+## 画皇冠
 
 canvas.drawPokerCrown ([x, y[, size[, startColor, endColor[, fillColor]]]])
 * x, y       - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
@@ -271,7 +271,7 @@ canvas.drawPokerCrown ([x, y[, size[, startColor, endColor[, fillColor]]]])
 
 =================
 
-## Draw blank card
+## 画空白牌
 
 canvas.drawEmptyCard ([x, y[, size[, startColor, endColor]]])
 
