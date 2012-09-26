@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+	<head>
+		<meta charset=utf-8 />
+		<title>Poker.JS demo</title>
+	</head>
+	<body>
+		<div id="controller">
+			show card dom img here.
+		</div>
+		<div id="command">
+			show card dom img here.
+		</div>
+		<div id="imageContainer">
+			show card dom img here.
+		</div>
+		<div id="canvasContainer">
+			show card dom canvas here.
+		</div>
+		<div id="drawContainer">
+			only have 1 canvas and will draw card into.
+		</div>
+	</body>
+	<script src="../source/poker.js"></script>
+	<script>
+		function showpoker(size) {
+			var poker = {};
+			if (window.CanvasRenderingContext2D && window.CanvasRenderingContext2D.prototype.drawPokerCard) {
+				poker.w = 0.75 * size, poker.h = +(size);
+				ct = ctx = document.getElementById('ct');
+				ct.width = ct.width;
+				ctx = ct.getContext('2d');
+				var x = 0, y = 0, suits = ['hearts', 'diamonds', 'spades', 'clubs'], points = ['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k'];
+				for (var ks in suits) {
+					for (var kp in points) {
+						ctx.drawPokerCard(x, y, poker.h, suits[ks], points[kp]);
+						x += poker.w;
+					}
+					x = 0, y += poker.h;
+				}
+				ctx.drawPokerCard( x = 0, y, poker.h, 'hearts', 'joker');
+				ctx.drawPokerCard(x += poker.w, y, poker.h, 'spades', 'joker');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#a22', '#b55');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#EB870D', '#F9CD9C');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#5E0C78', '#A464B8');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#2E319C', '#7A7BB8');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#1F7A80', '#58AAAF');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#437034', '#78A867');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#7E7F2A', '#B7B860');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#71273A', '#A9566C');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#3C451B', '#8BA23C');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#2B4299', '#5C72C2');
+				ctx.drawPokerBack(x += poker.w, y, poker.h, '#535550', '#90928C');
+			}
+		}
+	</script>
+</html>

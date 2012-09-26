@@ -3,11 +3,7 @@
  *
  * poker.js
  * Created by Xiaole Tao (http://xiaole.happylive.org)
- * Last update - 2012/09/25.
- *
- * Todo:
- *    - render dom image poker card
- *    - render canvas image data of poker card
+ * Last update - 2012/09/26.
  */
 (function() {
 	if (window.CanvasRenderingContext2D) {
@@ -42,10 +38,126 @@
 			return args[1] + n * args[2] / 200;
 		}, as = function(n) {
 			return n * arguments.callee.caller.arguments[2] / 200;
+		}, pc = function(size) {
+			var canvas = document.createElement('canvas');
+			canvas.height = size = size || 200;
+			canvas.width = canvas.height * 0.75;
+			return canvas;
+		}
+		/**
+		 * ### Draw card number side
+		 *
+		 * canvas.drawPokerCard ([x, y[, size[, suit[, point]]]])
+		 *
+		 * * x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
+		 * * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
+		 * * suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
+		 *           ['hearts', 'diamonds', 'spades', 'clubs']
+		 *           When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
+		 *           Default value is 'hearts'.
+		 * * point - Card point. The value is case insensitive and it should be one of these value in []:
+		 *           ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
+		 *           Default value is 'JOCKER'.
+		 *
+		 * Example:
+		 *
+		 * * canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
+		 * * canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
+		 */
+		CanvasRenderingContext2D.prototype.drawPokerCard = function(x, y, size, suit, point) {
+			x = x || 0;
+			y = y || 0;
+			size = size || 200;
+			suit = (suit || 'hearts').toLowerCase();
+			point = (point || 'joker').toLowerCase();
+
+			this.drawEmptyCard(ax(0), ay(0), as(200));
+			this.fillStyle = (suit === 'hearts' || suit === 'diamonds') ? '#a22' : '#000';
+			if (size >= 100) {
+				if (point !== 'joker') {
+					this.fillPokerSymbol(ax(40), ay(65), as(70), suit);
+					this.fillPokerSymbol(ax(10), ay(10), as(40), point);
+					this.fillPokerSymbol(ax(11), ay(55), as(25), suit);
+					this.fillPokerSymbol(ax(140), ay(190), as(-40), point);
+					this.fillPokerSymbol(ax(139), ay(145), as(-25), suit);
+				} else {
+					this.fillPokerSymbol(ax(11), ay(10), as(18), 'joker');
+					this.fillPokerSymbol(ax(139), ay(190), as(-18), 'joker');
+					if (suit === 'hearts' || suit === 'diamonds') {
+						this.drawPokerCrown(ax(38), ay(63), as(74), '#b55', '#a22');
+						this.drawPokerCrown(ax(40), ay(65), as(70), '#fdf98b', '#e7bd4f', '#a22');
+					} else {
+						this.drawPokerCrown(ax(38), ay(63), as(74), '#000', '#000');
+						this.drawPokerCrown(ax(40), ay(65), as(70), '#eee', '#888', '#333');
+					}
+				}
+			} else {
+				if (point !== 'joker') {
+					this.fillPokerSymbol(ax(30), ay(75), as(100), suit);
+					this.fillPokerSymbol(ax(15), ay(15), as(50), point);
+				} else {
+					this.fillPokerSymbol(ax(11), ay(10), as(22), 'joker');
+					if (suit === 'hearts' || suit === 'diamonds') {
+						this.drawPokerCrown(ax(45), ay(73), as(89), '#b55', '#a22');
+						this.drawPokerCrown(ax(47), ay(75), as(85), '#fdf98b', '#e7bd4f', '#a22');
+					} else {
+						this.drawPokerCrown(ax(45), ay(73), as(89), '#000', '#000');
+						this.drawPokerCrown(ax(47), ay(75), as(85), '#eee', '#888', '#333');
+					}
+				}
+			}
 		};
 
 		/**
-		 * ## Draw round corner rectangle
+		 * ### Draw card back side
+		 *
+		 * canvas.drawPokerBack ([x, y[, size[, foregroundColor[, backgroundColor]]]])
+		 *
+		 * * x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
+		 * * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
+		 * * foregroundColor - Foreground color. Default value is '#AA2222'.
+		 * * backgroundColor - Background color. Default value is '#BB5555'.
+		 *
+		 * Example:
+		 *
+		 * * canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
+		 * * canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
+		 */
+		CanvasRenderingContext2D.prototype.drawPokerBack = function(x, y, size, foregroundColor, backgroundColor) {
+			x = x || 0;
+			y = y || 0;
+			size = size || 200;
+			foregroundColor = foregroundColor || '#a22';
+			backgroundColor = backgroundColor || '#b55';
+
+			this.drawEmptyCard(x, y, size, foregroundColor, backgroundColor);
+
+			this.fillStyle = foregroundColor;
+			this.fillRoundRect(ax(10), ay(10), as(130), as(180), as(8));
+			this.strokeStyle = backgroundColor;
+			this.strokeRoundRect(ax(18), ay(18), as(114), as(164), as(4));
+			this.fillStyle = backgroundColor;
+			this.fillRoundRect(ax(26), ay(26), as(96), as(148), as(24), true);
+
+			this.fillPokerSymbol(ax(24), ay(24), as(20), 'spades');
+			this.fillPokerSymbol(ax(106), ay(24), as(20), 'spades');
+			this.fillPokerSymbol(ax(44), ay(176), as(-20), 'spades');
+			this.fillPokerSymbol(ax(126), ay(176), as(-20), 'spades');
+			this.fillStyle = foregroundColor;
+			this.fillRoundRect(ax(50), ay(40), as(50), as(120), as(24));
+			this.fillPokerSymbol(ax(32), ay(54), as(86), 'spades');
+			this.fillPokerSymbol(ax(30), ay(60), as(16), 'spades');
+			this.fillPokerSymbol(ax(104), ay(60), as(16), 'spades');
+			this.fillPokerSymbol(ax(30), ay(128), as(16), 'spades');
+			this.fillPokerSymbol(ax(104), ay(128), as(16), 'spades');
+			this.strokePokerSymbol(ax(31), ay(53), as(88), 'spades');
+			this.fillStyle = backgroundColor;
+			this.fillPokerSymbol(ax(47), ay(80), as(35), 'nine');
+			this.fillPokerSymbol(ax(77), ay(80), as(35), 'nine');
+		};
+
+		/**
+		 * ### Draw round corner rectangle
 		 *
 		 * canvas.roundRect       ([x, y[, width, height[, radius[, [direction]]]]])
 		 * canvas.strokeRoundRect ([x, y[, width, height[, radius[, [direction]]]]])
@@ -102,16 +214,16 @@
 		};
 
 		/**
-		 * ## Draw SVG curve
+		 * ### Draw SVG curve
 		 *
 		 * canvas.svgCurve (x, y, size, svgPath)
 		 *
 		 * * x, y    - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 		 * * size    - The pixel size of the curve.
 		 * * svgPath - Value of property 'd' of SVG 'path' method.
-		 * *           When create the curve by svg software, please move the origin of coordinate be 0,0.
-		 * *           And keep the bigger size of height and width to 200px.
-		 * *           Don't use AQ or T methon in svg software, browser canvas have not relative methon to render it.
+		 *             When create the curve by svg software, please move the origin of coordinate be 0,0.
+		 *             And keep the bigger size of height and width to 200px.
+		 *             Don't use AQ or T methon in svg software, browser canvas have not relative methon to render it.
 		 *
 		 * Example, draw a heart symbol:
 		 *
@@ -133,11 +245,11 @@
 			for (pn in sa) {
 				pa = sa[pn].split(/[, ]/);
 				// @formatter:off
-				(pa[0] === 'M') ? (this.moveTo(ax(pa[1]), ay(pa[2]))): 
-				(pa[0] === 'L') ? (this.lineTo(ax(pa[1]), ay(pa[2]))): 
-				(pa[0] === 'H') ? (this.lineTo(ax(pa[1]), ry)): 
-				(pa[0] === 'V') ? (this.lineTo(rx, ay(pa[1]))): 
-				(pa[0] === 'C') ? (this.bezierCurveTo(ax(pa[1]), ay(pa[2]), ax(pa[3]), ay(pa[4]), ax(pa[5]), ay(pa[6]))): 
+				(pa[0] === 'M') ? (this.moveTo(ax(pa[1]), ay(pa[2]))):
+				(pa[0] === 'L') ? (this.lineTo(ax(pa[1]), ay(pa[2]))):
+				(pa[0] === 'H') ? (this.lineTo(ax(pa[1]), ry)):
+				(pa[0] === 'V') ? (this.lineTo(rx, ay(pa[1]))):
+				(pa[0] === 'C') ? (this.bezierCurveTo(ax(pa[1]), ay(pa[2]), ax(pa[3]), ay(pa[4]), ax(pa[5]), ay(pa[6]))):
 				(pa[0] === 'Q') && (this.quadraticCurveTo(ax(pa[1]), ay(pa[2]), ax(pa[3]), ay(pa[4])));
 				// @formatter:on
 			}
@@ -145,7 +257,7 @@
 		};
 
 		/**
-		 * ## Draw poker symbol
+		 * ### Draw poker symbol
 		 *
 		 * canvas.drawPokerSymbol   ([x, y[, size[, symbol]]])
 		 * canvas.strokePokerSymbol ([x, y[, size[, symbol]]])
@@ -154,11 +266,11 @@
 		 * * x, y   - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 		 * * size   - The pixel size of symbol. Default value is 200.
 		 * * symbol - The name of symbol.  The value is case insensitive and it should be one of these value in []:
-		 * *          ['hearts', 'diamonds', 'spades', 'clubs']
-		 * *          ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-		 * *          ['JOKER']  // uppercase 'JOKER'
-		 * *          ['CROWN']  // a part of crown, to jointing a crown of JOKER card
-		 * *          ['NINE']   // bold '9' for jointing '99' pattern
+		 *            ['hearts', 'diamonds', 'spades', 'clubs']
+		 *            ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+		 *            ['JOKER']  // uppercase 'JOKER'
+		 *            ['CROWN']  // a part of crown, to jointing a crown of JOKER card
+		 *            ['NINE']   // bold '9' for jointing '99' pattern
 		 *
 		 * Example:
 		 *
@@ -181,7 +293,7 @@
 		};
 
 		/**
-		 * ## Draw crown
+		 * ### Draw crown
 		 *
 		 * canvas.drawPokerCrown ([x, y[, size[, startColor, endColor[, fillColor]]]])
 		 *
@@ -225,11 +337,10 @@
 			this.fillPokerSymbol(ax(53), ay(155), as(13), 'hearts');
 			this.fillPokerSymbol(ax(113), ay(155), as(13), 'hearts');
 			this.fillPokerSymbol(ax(133), ay(155), as(13), 'hearts');
-
 		};
 
 		/**
-		 * ## Draw blank card
+		 * ### Draw blank card
 		 *
 		 * canvas.drawEmptyCard ([x, y[, size[, startColor, endColor]]])
 		 *
@@ -261,115 +372,68 @@
 			this.strokeRoundRect(ax(0), ay(0), as(150), as(200), as(16));
 		};
 
-		/**
-		 * ## Draw card back side
-		 *
-		 * canvas.drawPokerBack ([x, y[, size[, foregroundColor[, backgroundColor]]]])
-		 *
-		 * * x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * * foregroundColor - Foreground color. Default value is '#AA2222'.
-		 * * backgroundColor - Background color. Default value is '#BB5555'.
-		 *
-		 * Example:
-		 *
-		 * * canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
-		 * * canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
-		 */
-		CanvasRenderingContext2D.prototype.drawPokerBack = function(x, y, size, foregroundColor, backgroundColor) {
-			x = x || 0;
-			y = y || 0;
-			size = size || 200;
-			foregroundColor = foregroundColor || '#a22';
-			backgroundColor = backgroundColor || '#b55';
+		window.Poker = {
+			/**
+			 * ### Draw card number side
+			 * Poker.getCardImage  ([size[, suit[, point]]])
+			 * Poker.getCardCanvas ([size[, suit[, point]]])
+			 * Poker.getCardData   ([size[, suit[, point]]])
+			 *
+			 * * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4.
+			 *           Default value is 200.
+			 * * suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
+			 *           ['hearts', 'diamonds', 'spades', 'clubs']
+			 *           When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
+			 *           Default value is 'hearts'.
+			 * * point - Card point. The value is case insensitive and it should be one of these value in []:
+			 * *         ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
+			 * *         Default value is 'JOCKER'.
+			 *
+			 * Example:
+			 * * document.body.appendChild(Poker.getCardCanvas(100, 'hearts', 'Q'));
+			 */
+			getCardImage : function(size, suit, point) {
+				var image = document.createElement('img');
+				image.src = this.getCardData(size, suit, point);
+				return image;
+			},
+			getCardCanvas : function(size, suit, point) {
+				var canvas = pc(size);
+				canvas.getContext('2d').drawPokerCard(0, 0, canvas.height, suit, point);
+				return canvas;
+			},
+			getCardData : function(size, suit, point) {
+				return this.getCardCanvas(size, suit, point).toDataURL();
+			},
 
-			this.drawEmptyCard(x, y, size, foregroundColor, backgroundColor);
-
-			this.fillStyle = foregroundColor;
-			this.fillRoundRect(ax(10), ay(10), as(130), as(180), as(8));
-			this.strokeStyle = backgroundColor;
-			this.strokeRoundRect(ax(18), ay(18), as(114), as(164), as(4));
-			this.fillStyle = backgroundColor;
-			this.fillRoundRect(ax(26), ay(26), as(96), as(148), as(24), true);
-
-			this.fillPokerSymbol(ax(24), ay(24), as(20), 'spades');
-			this.fillPokerSymbol(ax(106), ay(24), as(20), 'spades');
-			this.fillPokerSymbol(ax(44), ay(176), as(-20), 'spades');
-			this.fillPokerSymbol(ax(126), ay(176), as(-20), 'spades');
-			this.fillStyle = foregroundColor;
-			this.fillRoundRect(ax(50), ay(40), as(50), as(120), as(24));
-			this.fillPokerSymbol(ax(32), ay(54), as(86), 'spades');
-			this.fillPokerSymbol(ax(30), ay(60), as(16), 'spades');
-			this.fillPokerSymbol(ax(104), ay(60), as(16), 'spades');
-			this.fillPokerSymbol(ax(30), ay(128), as(16), 'spades');
-			this.fillPokerSymbol(ax(104), ay(128), as(16), 'spades');
-			this.strokePokerSymbol(ax(31), ay(53), as(88), 'spades');
-			this.fillStyle = backgroundColor;
-			this.fillPokerSymbol(ax(47), ay(80), as(35), 'nine');
-			this.fillPokerSymbol(ax(77), ay(80), as(35), 'nine');
-		};
-
-		/**
-		 * ## Draw card number side
-		 *
-		 * canvas.drawPokerCard ([x, y[, size[, suit[, point]]]])
-		 *
-		 * * x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * * suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
-		 * *         ['hearts', 'diamonds', 'spades', 'clubs']
-		 * *         When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
-		 * *         Default value is 'hearts'.
-		 * * point - Card point. The value is case insensitive and it should be one of these value in []:
-		 * *         ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-		 * *         Default value is 'JOCKER'.
-		 *
-		 * Example:
-		 *
-		 * * canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
-		 * * canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
-		 */
-		CanvasRenderingContext2D.prototype.drawPokerCard = function(x, y, size, suit, point) {
-			x = x || 0;
-			y = y || 0;
-			size = size || 200;
-			suit = (suit || 'hearts').toLowerCase();
-			point = (point || 'joker').toLowerCase();
-
-			this.drawEmptyCard(ax(0), ay(0), as(200));
-			this.fillStyle = (suit === 'hearts' || suit === 'diamonds') ? '#a22' : '#000';
-			if (size >= 100) {
-				if (point !== 'joker') {
-					this.fillPokerSymbol(ax(40), ay(65), as(70), suit);
-					this.fillPokerSymbol(ax(10), ay(10), as(40), point);
-					this.fillPokerSymbol(ax(11), ay(55), as(25), suit);
-					this.fillPokerSymbol(ax(140), ay(190), as(-40), point);
-					this.fillPokerSymbol(ax(139), ay(145), as(-25), suit);
-				} else {
-					this.fillPokerSymbol(ax(11), ay(10), as(18), 'joker');
-					this.fillPokerSymbol(ax(139), ay(190), as(-18), 'joker');
-					if (suit === 'hearts' || suit === 'diamonds') {
-						this.drawPokerCrown(ax(38), ay(63), as(74), '#b55', '#a22');
-						this.drawPokerCrown(ax(40), ay(65), as(70), '#fdf98b', '#e7bd4f', '#a22');
-					} else {
-						this.drawPokerCrown(ax(38), ay(63), as(74), '#000', '#000');
-						this.drawPokerCrown(ax(40), ay(65), as(70), '#eee', '#888', '#333');
-					}
-				}
-			} else {
-				if (point !== 'joker') {
-					this.fillPokerSymbol(ax(30), ay(75), as(100), suit);
-					this.fillPokerSymbol(ax(15), ay(15), as(50), point);
-				} else {
-					this.fillPokerSymbol(ax(11), ay(10), as(22), 'joker');
-					if (suit === 'hearts' || suit === 'diamonds') {
-						this.drawPokerCrown(ax(45), ay(73), as(89), '#b55', '#a22');
-						this.drawPokerCrown(ax(47), ay(75), as(85), '#fdf98b', '#e7bd4f', '#a22');
-					} else {
-						this.drawPokerCrown(ax(45), ay(73), as(89), '#000', '#000');
-						this.drawPokerCrown(ax(47), ay(75), as(85), '#eee', '#888', '#333');
-					}
-				}
+			/**
+			 * ### Draw card back side
+			 * Poker.getBackImage  ([size[, foregroundColor, backgroundColor]])
+			 * Poker.getBackCanvas ([size[, foregroundColor, backgroundColor]])
+			 * Poker.getBackData   ([size[, foregroundColor, backgroundColor]])
+			 *
+			 * * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
+			 *                     Default value is 200.
+			 * * foregroundColor - Foreground color. Default value is '#AA2222'.
+			 * * backgroundColor - Background color. Default value is '#BB5555'.
+			 *
+			 * Example:
+			 * * document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
+			 *
+			 */
+			getBackImage : function(size, foregroundColor, backgroundColor) {
+				var image = document.createElement('img');
+				image.src = this.getBackData(size, foregroundColor, backgroundColor);
+				return image;
+			},
+			getBackCanvas : function(size, foregroundColor, backgroundColor) {
+				var canvas = pc(size);
+				canvas.getContext('2d').drawPokerBack(0, 0, canvas.height, foregroundColor, backgroundColor);
+				console.log(canvas.height);
+				return canvas;
+			},
+			getBackData : function(size, foregroundColor, backgroundColor) {
+				return this.getBackCanvas(size, foregroundColor, backgroundColor).toDataURL();
 			}
 		};
 	}
