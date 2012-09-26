@@ -6,9 +6,9 @@ Poker.JS
 *****************************************
 ### Draw card number side
 ```text
-Poker.getCardImage  ([size[, suit[, point]]])
-Poker.getCardCanvas ([size[, suit[, point]]])
-Poker.getCardData   ([size[, suit[, point]]])
+Poker.getCardImage  (size, suit, point)
+Poker.getCardCanvas (size, suit, point)
+Poker.getCardData   (size, suit, point)
 ```
 ```text
 size  - Height pixel of card. The ratio of card width and height is fixed to 3:4.
@@ -28,9 +28,9 @@ document.body.appendChild(Poker.getCardCanvas(100, 'hearts', 'Q'));
 
 ### Draw card back side
 ```text
-Poker.getBackImage  ([size[, foregroundColor, backgroundColor]])
-Poker.getBackCanvas ([size[, foregroundColor, backgroundColor]])
-Poker.getBackData   ([size[, foregroundColor, backgroundColor]])
+Poker.getBackImage  (size[, foregroundColor, backgroundColor]])
+Poker.getBackCanvas (size[, foregroundColor, backgroundColor]])
+Poker.getBackData   (size[, foregroundColor, backgroundColor]])
 ```
 ```text
 size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
@@ -48,7 +48,7 @@ document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 ***************************************************************
 ### Draw card back side
 ```text
-canvas.drawPokerBack ([x, y[, size[, foregroundColor[, backgroundColor]]]])
+canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```
 ```text
 x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
@@ -64,7 +64,7 @@ canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 
 ### Draw card number side
 ```text
-canvas.drawPokerCard ([x, y[, size[, suit[, point]]]])
+canvas.drawPokerCard (x, y, size, suit, point)
 ```
 ```text
 x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
@@ -88,9 +88,9 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 ***************************************************************
 ### Draw round corner rectangle
 ```text
-canvas.roundRect       ([x, y[, width, height[, radius[, [direction]]]]])
-canvas.strokeRoundRect ([x, y[, width, height[, radius[, [direction]]]]])
-canvas.fillRoundRect   ([x, y[, width, height[, radius[, [direction]]]]])
+canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
+canvas.strokeRoundRect (x, y[, width, height[, radius[, direction]]])
+canvas.fillRoundRect   (x, y[, width, height[, radius[, direction]]])
 ```
 ```text
 x, y          - The x, y coordinate of top left corner of the rectangle in canvas. Default value is 0, 0.
@@ -123,9 +123,9 @@ canvas.svgCurve ('M100,30C60,7 0,7 0,76C0,131 100,190 100,190C100,190 200,131 20
 
 ### Draw poker symbol
 ```text
-canvas.drawPokerSymbol   ([x, y[, size[, symbol]]])
-canvas.strokePokerSymbol ([x, y[, size[, symbol]]])
-canvas.fillPokerSymbol   ([x, y[, size[, symbol]]])
+canvas.drawPokerSymbol   (x, y, size, symbol)
+canvas.strokePokerSymbol (x, y, size, symbol)
+canvas.fillPokerSymbol   (x, y, size, symbol)
 ```
 ```text
 x, y   - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
@@ -144,7 +144,7 @@ canvas.fillPokerSymbol ('hearts', 0, 0, 200);
 
 ### Draw crown
 ```text
-canvas.drawPokerCrown ([x, y[, size[, startColor, endColor[, fillColor]]]])
+canvas.drawPokerCrown (x, y, size[, startColor, endColor[, fillColor]])
 ```
 ```text
 x, y       - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
@@ -160,7 +160,7 @@ canvas.drawPokerCrown(0, 0, 200);
 
 ### Draw blank card
 ```text
-canvas.drawEmptyCard ([x, y[, size[, startColor, endColor]]])
+canvas.drawEmptyCard (x, y, size[, startColor, endColor])
 ```
 ```text
 x, y       - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
@@ -182,9 +182,9 @@ Chinese version readme 中文版本读我文档
 ************************
 ### 画牌面
 ```text
-Poker.getCardImage  ([size[, suit[, point]]])
-Poker.getCardCanvas ([size[, suit[, point]]])
-Poker.getCardData   ([size[, suit[, point]]])
+Poker.getCardImage  (size, suit, point)
+Poker.getCardCanvas (size, suit, point)
+Poker.getCardData   (size, suit, point)
 ```
 ```text
 size  - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
@@ -204,9 +204,9 @@ document.body.appendChild(Poker.getCardCanvas(100, 'hearts', 'Q'));
 
 ### 画牌背
 ```text
-Poker.getBackImage  ([size[, foregroundColor, backgroundColor]])
-Poker.getBackCanvas ([size[, foregroundColor, backgroundColor]])
-Poker.getBackData   ([size[, foregroundColor, backgroundColor]])
+Poker.getBackImage  (size[, foregroundColor, backgroundColor])
+Poker.getBackCanvas (size[, foregroundColor, backgroundColor])
+Poker.getBackData   (size[, foregroundColor, backgroundColor])
 ```
 ```text
 size            - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
@@ -223,7 +223,7 @@ document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 *************************************************
 ### 画牌背
 ```text
-canvas.drawPokerBack ([x, y[, size[, foregroundColor[, backgroundColor]]]])
+canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```
 ```text
 x, y            - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
@@ -239,7 +239,7 @@ canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 
 ### 画牌面
 ```text
-canvas.drawPokerCard ([x, y[, size[, suit[, point]]]])
+canvas.drawPokerCard (x, y, size, suit, point)
 ```
 ```text
 x, y  - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
@@ -264,9 +264,9 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 *************************************************
 ### 画圆角矩形
 ```text
-canvas.roundRect       ([x, y[, width, height[, radius[, [direction]]]]])
-canvas.strokeRoundRect ([x, y[, width, height[, radius[, [direction]]]]])
-canvas.fillRoundRect   ([x, y[, width, height[, radius[, [direction]]]]])
+canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
+canvas.strokeRoundRect (x, y[, width, height[, radius[, direction]]])
+canvas.fillRoundRect   (x, y[, width, height[, radius[, direction]]])
 ```
 ```text
 x, y          - 矩形的左上角在Canvas里的坐标。缺省值为0, 0。
@@ -299,9 +299,9 @@ canvas.svgCurve ('M100,30C60,7 0,7 0,76C0,131 100,190 100,190C100,190 200,131 20
 
 ### 画扑克符号
 ```text
-canvas.drawPokerSymbol   ([x, y[, size[, symbol]]])
-canvas.strokePokerSymbol ([x, y[, size[, symbol]]])
-canvas.fillPokerSymbol   ([x, y[, size[, symbol]]])
+canvas.drawPokerSymbol   (x, y, size, symbol)
+canvas.strokePokerSymbol (x, y, size, symbol)
+canvas.fillPokerSymbol   (x, y, size, symbol)
 ```
 ```text
 x, y   - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
@@ -321,7 +321,7 @@ canvas.fillPokerSymbol ('hearts', 0, 0, 200);
 
 ### 画皇冠
 ```text
-canvas.drawPokerCrown ([x, y[, size[, startColor, endColor[, fillColor]]]])
+canvas.drawPokerCrown (x, y, size[, startColor, endColor[, fillColor]])
 ```
 ```text
 x, y       - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
@@ -337,7 +337,7 @@ canvas.drawPokerCrown(0, 0, 200);
 
 ### 画空白牌
 ```text
-canvas.drawEmptyCard ([x, y[, size[, startColor, endColor]]])
+canvas.drawEmptyCard (x, y, size[, startColor, endColor])
 ```
 ```text
 x, y       - 牌的左上角在Canvas里的坐标。缺省值为0, 0。

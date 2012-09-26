@@ -44,10 +44,10 @@ canvas.drawPokerCard(10, 10, 120, 'hearts', '6');
 
 #### Method
 ```text
-Poker.getCardImage  ([size[, suit[, point]]])
-Poker.getCardCanvas ([size[, suit[, point]]])
-Poker.getCardData   ([size[, suit[, point]]])
-canvas.drawPokerCard ([x, y[, size[, suit[, point]]]])
+Poker.getCardImage   (size, suit, point)
+Poker.getCardCanvas  (size, suit, point)
+Poker.getCardData    (size, suit, point)
+canvas.drawPokerCard (x, y, size, suit, point)
 ```
 
 #### Parameters
@@ -74,10 +74,10 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 
 #### Method
 ```text
-Poker.getBackImage  ([size[, foregroundColor, backgroundColor]])
-Poker.getBackCanvas ([size[, foregroundColor, backgroundColor]])
-Poker.getBackData   ([size[, foregroundColor, backgroundColor]])
-canvas.drawPokerBack ([x, y[, size[, foregroundColor[, backgroundColor]]]])
+Poker.getBackImage   (size[, foregroundColor, backgroundColor])
+Poker.getBackCanvas  (size[, foregroundColor, backgroundColor])
+Poker.getBackData    (size[, foregroundColor, backgroundColor])
+canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```
 
 #### Parameters
@@ -142,10 +142,10 @@ canvas.drawPokerCard(10, 10, 120, 'hearts', '6');
 
 #### 方法
 ```text
-Poker.getCardImage  ([size[, suit[, point]]])
-Poker.getCardCanvas ([size[, suit[, point]]])
-Poker.getCardData   ([size[, suit[, point]]])
-canvas.drawPokerCard ([x, y[, size[, suit[, point]]]])
+Poker.getCardImage   (size, suit, point)
+Poker.getCardCanvas  (size, suit, point)
+Poker.getCardData    (size, suit, point)
+canvas.drawPokerCard (x, y, size, suit, point)
 ```
 
 #### 参数
@@ -173,10 +173,10 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 
 #### 方法
 ```text
-Poker.getBackImage  ([size[, foregroundColor, backgroundColor]])
-Poker.getBackCanvas ([size[, foregroundColor, backgroundColor]])
-Poker.getBackData   ([size[, foregroundColor, backgroundColor]])
-canvas.drawPokerBack ([x, y[, size[, foregroundColor[, backgroundColor]]]])
+Poker.getBackImage   (size[, foregroundColor, backgroundColor])
+Poker.getBackCanvas  (size[, foregroundColor, backgroundColor])
+Poker.getBackData    (size[, foregroundColor, backgroundColor])
+canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor]])
 ```
 
 #### 参数
