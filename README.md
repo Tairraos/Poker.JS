@@ -1,5 +1,6 @@
 Poker.JS
 =================
+[中文文档点此 Chinese version readme](#Chinese version readme 中文版本读我文档)
 
 # Usage
 
