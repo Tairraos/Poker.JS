@@ -1,9 +1,10 @@
 Poker.JS
 =================
+[Chinese version readme 中文版本读我文档](#chinese-version-readme-中文版本读我文档)
 
-*****************************************
-#Provided 'Poker' namespace and 6 methods
-*****************************************
+*******************************************
+## Provided 'Poker' namespace and 6 methods
+*******************************************
 ### Draw card number side
 ```text
 Poker.getCardImage  (size, suit, point)
@@ -43,9 +44,9 @@ backgroundColor - Background color. Default value is '#BB5555'.
 document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 ```
 
-***************************************************************
-#Extend 2 public mothods into `window.CanvasRenderingContext2D`
-***************************************************************
+*****************************************************************
+## Extend 2 public mothods into `window.CanvasRenderingContext2D`
+*****************************************************************
 ### Draw card back side
 ```text
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
@@ -83,9 +84,9 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
 canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 ```
 
-***************************************************************
-#Extend 9 public mothods into `window.CanvasRenderingContext2D`
-***************************************************************
+*****************************************************************
+## Extend 9 public mothods into `window.CanvasRenderingContext2D`
+*****************************************************************
 ### Draw round corner rectangle
 ```text
 canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
@@ -172,14 +173,16 @@ endColor   - End color of gradient background color. Default value is '#BB5555'.
 //Example:
 canvas.drawEmptyCard(0, 0, 200);
 ```
-
+   
+   
 *********************************************
-#Chinese version readme 中文版本读我文档
+# Chinese version readme 中文版本读我文档
 *********************************************
-
-************************
-#提供了'Poker'命名空间和6个方法
-************************
+  
+  
+*************************
+## 提供了'Poker'命名空间和6个方法
+*************************
 ### 画牌面
 ```text
 Poker.getCardImage  (size, suit, point)
@@ -218,9 +221,9 @@ backgroundColor - 背景色。缺省值为'#b55'。
 document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 ```
 
-*************************************************
-#在`window.CanvasRenderingContext2D`里扩展了2个公开方法
-*************************************************
+**************************************************
+## 在`window.CanvasRenderingContext2D`里扩展了2个公开方法
+**************************************************
 ### 画牌背
 ```text
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
@@ -259,9 +262,9 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
 canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 ```
 
-*************************************************
-#在`window.CanvasRenderingContext2D`里扩展了9个私有方法
-*************************************************
+**************************************************
+## 在`window.CanvasRenderingContext2D`里扩展了9个私有方法
+**************************************************
 ### 画圆角矩形
 ```text
 canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
