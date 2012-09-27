@@ -1,6 +1,6 @@
 Poker.JS
 =================
-[Chinese version readme 中文版本读我文档](#chinese-version-readme-中文版本读我文档)
+[Chinese version readme 中文版本读我文档](#chinese-version-readme)
 
 # Usage
 
@@ -95,13 +95,14 @@ document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
 canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 ```
-    
-    
------------------------------------
-# Chinese version readme 中文版本读我文档
------------------------------------
-    
-    
+<br>    
+<br>    
+************************
+# Chinese version readme
+# 中文版本读我文档
+************************
+<br>
+<br>
 # 使用方法
 
 首先，加载 poker.js

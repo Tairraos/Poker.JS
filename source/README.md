@@ -2,10 +2,9 @@ Poker.JS
 =================
 [Chinese version readme 中文版本读我文档](#chinese-version-readme)
 
-*******************************************
-### Provided 'Poker' namespace and 6 methods
-*******************************************
-#### Draw card number side
+## Provided 'Poker' namespace and 6 methods
+
+### Draw card number side
 ```text
 Poker.getCardImage  (size, suit, point)
 Poker.getCardCanvas (size, suit, point)
@@ -27,7 +26,7 @@ point - Card point. The value is case insensitive and it should be one of these 
 document.body.appendChild(Poker.getCardCanvas(100, 'hearts', 'Q'));
 ```
 
-#### Draw card back side
+### Draw card back side
 ```text
 Poker.getBackImage  (size[, foregroundColor, backgroundColor]])
 Poker.getBackCanvas (size[, foregroundColor, backgroundColor]])
@@ -44,10 +43,9 @@ backgroundColor - Background color. Default value is '#BB5555'.
 document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 ```
 
-*****************************************************************
-### Extend 2 public mothods into `window.CanvasRenderingContext2D`
-*****************************************************************
-#### Draw card back side
+## Extend 2 public mothods into `window.CanvasRenderingContext2D`
+
+### Draw card back side
 ```text
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```
@@ -63,7 +61,7 @@ canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
 canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 ```
 
-#### Draw card number side
+### Draw card number side
 ```text
 canvas.drawPokerCard (x, y, size, suit, point)
 ```
@@ -84,10 +82,9 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
 canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 ```
 
-*****************************************************************
-### Extend 9 public mothods into `window.CanvasRenderingContext2D`
-*****************************************************************
-#### Draw round corner rectangle
+## Extend 9 public mothods into `window.CanvasRenderingContext2D`
+
+### Draw round corner rectangle
 ```text
 canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
 canvas.strokeRoundRect (x, y[, width, height[, radius[, direction]]])
@@ -105,7 +102,7 @@ canvas.roundRect (0, 0, 200, 200, 30);
 canvas.roundRect (50, 50, 100, 100, 30, true);
 ```
 
-#### Draw SVG curve
+### Draw SVG curve
 ```text
 canvas.svgCurve (x, y, size, svgPath)
 ```
@@ -122,7 +119,7 @@ svgPath - Value of property 'd' of SVG 'path' method.
 canvas.svgCurve ('M100,30C60,7 0,7 0,76C0,131 100,190 100,190C100,190 200,131 200,76C200,7 140,7 100,30z', 0, 0, 200));
 ```
 
-#### Draw poker symbol
+### Draw poker symbol
 ```text
 canvas.drawPokerSymbol   (x, y, size, symbol)
 canvas.strokePokerSymbol (x, y, size, symbol)
@@ -143,7 +140,7 @@ symbol - The name of symbol.  The value is case insensitive and it should be one
 canvas.fillPokerSymbol ('hearts', 0, 0, 200);
 ```
 
-#### Draw crown
+### Draw crown
 ```text
 canvas.drawPokerCrown (x, y, size[, startColor, endColor[, fillColor]])
 ```
@@ -159,7 +156,7 @@ fillColor  - Fill color of jewel of crown. Default value is '#FFFFFF'.
 canvas.drawPokerCrown(0, 0, 200);
 ```
 
-#### Draw blank card
+### Draw blank card
 ```text
 canvas.drawEmptyCard (x, y, size[, startColor, endColor])
 ```
@@ -173,18 +170,17 @@ endColor   - End color of gradient background color. Default value is '#BB5555'.
 //Example:
 canvas.drawEmptyCard(0, 0, 200);
 ```
-    
-    
------------------------------------
+<br>    
+<br>    
+************************
 # Chinese version readme
 # 中文版本读我文档
------------------------------------
-    
-    
-*************************
-### 提供了'Poker'命名空间和6个方法
-*************************
-#### 画牌面
+************************
+<br>
+<br>
+## 提供了'Poker'命名空间和6个方法
+
+### 画牌面
 ```text
 Poker.getCardImage  (size, suit, point)
 Poker.getCardCanvas (size, suit, point)
@@ -206,7 +202,7 @@ point - 牌面点数。取值大小写不敏感，必须为下列[]内的值之�
 document.body.appendChild(Poker.getCardCanvas(100, 'hearts', 'Q'));
 ```
 
-#### 画牌背
+### 画牌背
 ```text
 Poker.getBackImage  (size[, foregroundColor, backgroundColor])
 Poker.getBackCanvas (size[, foregroundColor, backgroundColor])
@@ -222,10 +218,9 @@ backgroundColor - 背景色。缺省值为'#b55'。
 document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 ```
 
-**************************************************
-### 在`window.CanvasRenderingContext2D`里扩展了2个公开方法
-**************************************************
-#### 画牌背
+## 在`window.CanvasRenderingContext2D`里扩展了2个公开方法
+
+### 画牌背
 ```text
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```
@@ -241,7 +236,7 @@ canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
 canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 ```
 
-#### 画牌面
+### 画牌面
 ```text
 canvas.drawPokerCard (x, y, size, suit, point)
 ```
@@ -263,10 +258,9 @@ canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
 canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 ```
 
-**************************************************
-### 在`window.CanvasRenderingContext2D`里扩展了9个私有方法
-**************************************************
-#### 画圆角矩形
+## 在`window.CanvasRenderingContext2D`里扩展了9个私有方法
+
+### 画圆角矩形
 ```text
 canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
 canvas.strokeRoundRect (x, y[, width, height[, radius[, direction]]])
@@ -284,7 +278,7 @@ canvas.roundRect (0, 0, 200, 200, 30);
 canvas.roundRect (50, 50, 100, 100, 30, true);
 ```
 
-#### 画SVG曲线
+### 画SVG曲线
 ```text
 canvas.svgCurve (x, y, size, svgPath)
 ```
@@ -301,7 +295,7 @@ svgPath - SVG的path方法使用的d属性值。
 canvas.svgCurve ('M100,30C60,7 0,7 0,76C0,131 100,190 100,190C100,190 200,131 200,76C200,7 140,7 100,30z', 0, 0, 200));
 ```
 
-#### 画扑克符号
+### 画扑克符号
 ```text
 canvas.drawPokerSymbol   (x, y, size, symbol)
 canvas.strokePokerSymbol (x, y, size, symbol)
@@ -323,7 +317,7 @@ symbol - 符号的名称，取值大小写不敏感，必须为下列[]内的值
 canvas.fillPokerSymbol ('hearts', 0, 0, 200);
 ```
 
-#### 画皇冠
+### 画皇冠
 ```text
 canvas.drawPokerCrown (x, y, size[, startColor, endColor[, fillColor]])
 ```
@@ -339,7 +333,7 @@ fillColor  - 皇冠上的宝石填充色。缺省值为'#FFFFFF'。
 canvas.drawPokerCrown(0, 0, 200);
 ```
 
-#### 画空白牌
+### 画空白牌
 ```text
 canvas.drawEmptyCard (x, y, size[, startColor, endColor])
 ```
