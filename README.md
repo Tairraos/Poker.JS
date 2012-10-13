@@ -55,13 +55,15 @@ canvas.drawPokerCard (x, y, size, suit, point)
 ```text
 x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
-        ['hearts', 'diamonds', 'spades', 'clubs']
-        When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
-        Default value is 'hearts'.
-point - Card point. The value is case insensitive and it should be one of these value in []:
-        ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-        Default value is 'JOCKER'.
+suit  - Poker suit. Value is case insensitive and should be one of below: 
+        ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        'h', 'd', 's', 'c' are abbreviation
+        For joker, 'h' & 'd' means big joker, 's' & 'c' means little joker.
+        Default value is 'h'.
+point - Card point. Value is case insensitive and should be one of below: 
+        ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(letter O) is abbreviation of 'JOKER'
+        Default value is 'O'.
 ```
 
 #### Example
@@ -85,15 +87,15 @@ canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```text
 x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-foregroundColor - Foreground color. Default value is '#AA2222'.
-backgroundColor - Background color. Default value is '#BB5555'.
+foregroundColor - Foreground color. Default value is '#BB5555'.
+backgroundColor - Background color. Default value is '#AA2222'.
 ```
 
 #### Example
 ```js
-document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
-canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
-canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
+document.body.appendChild(Poker.getBackCanvas(300, '#7A7BB8', '#2E319C'));
+canvas.drawPokerBack (10, 10, 300, '#b55', '#a22')
+canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 ```
 <br>    
 <br>    
@@ -157,13 +159,14 @@ canvas.drawPokerCard (x, y, size, suit, point)
 x, y  - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size  - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
 suit  - 牌面花色。取值大小写不敏感，必须为下列[]内的值之一：
-        ['hearts', 'diamonds', 'spades', 'clubs']
-        值对应红桃，方块，黑桃，梅花
+        ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        值对应红桃，方块，黑桃，梅花, 'h', 'd', 's', 'c' 是缩略写法
         当牌面点数为'JOKER'时，红桃和方块表示牌为大王；黑桃和梅花表示牌为小王。
-        缺省值为'hearts'。
+        缺省值为'h'
 point - 牌面点数。取值大小写不敏感，必须为下列[]内的值之一：
-        ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-        'JOKER'表示大王小王。缺省值为'JOCKER'。
+        ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(字母O)是'JOKER'的缩略写法
+        缺省值为'O'
 ```
 
 #### 例子
@@ -187,13 +190,13 @@ canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor]])
 ```text
 x, y            - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size            - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
-foregroundColor - 前景色。缺省值为'#a22'。
-backgroundColor - 背景色。缺省值为'#b55'。
+foregroundColor - 前景色。缺省值为'#BB5555'。
+backgroundColor - 背景色。缺省值为'#AA2222'。
 ```
 
 #### 例子
 ```js
-document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
-canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
-canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
+document.body.appendChild(Poker.getBackCanvas(300, '#7A7BB8', '#2E319C'));
+canvas.drawPokerBack (10, 10, 300, '#b55', '#a22')
+canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 ```

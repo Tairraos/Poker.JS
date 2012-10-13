@@ -17,17 +17,25 @@
 			'7' : 'M37,200C50,131,65,79,102,22H26V46H6V0H117L131,22C91,64,54,202,61,200H37z',
 			'8' : 'M2,142C3,115,13,105,32,90C17,79,10,63,12,50C15,17,41,0,69,0C98,1,123,24,125,48C127,69,120,79,105,90C123,105,135,115,135,141C134,168,111,199,71,200C31,201,1,168,2,142L2,142zM113,142C115,117,93,101,69,101C45,101,23,121,23,143C23,166,51,178,69,178C91,178,112,163,113,142L113,142zM105,55C106,34,87,20,67,21C50,21,31,34,31,51C31,72,52,83,70,83C86,84,105,71,105,55L105,55z',
 			'9' : 'MM11,161L30,156C37,174,52,180,67,178C94,176,102,146,104,120C94,131,78,137,64,136C21,134,10,100,10,65C9,35,21,13,43,3C55,-1,81,-1,92,4C118,18,128,42,126,98C126,144,117,198,66,200C36,204,14,181,11,161L11,161zM85,111C94,105,98,100,102,92C106,86,106,83,106,69C103,36,86,17,60,21C44,23,36,31,33,46C24,73,35,105,55,112C63,116,78,115,85,111L85,111z',
-			'10' : 'M6,200V0H26V200H6M85,0C66,0,50,17,50,39V162C50,183,66,200,85,200H96C115,200,130,183,130,162V39C130,17,115,0,96,0H85M90,19C102,19,110,28,110,38V163C110,174,102,183,90,183C79,183,70,174,70,163V38C70,28,79,19,90,19L90,19z',
+			//10
+			'0' : 'M6,200V0H26V200H6M85,0C66,0,50,17,50,39V162C50,183,66,200,85,200H96C115,200,130,183,130,162V39C130,17,115,0,96,0H85M90,19C102,19,110,28,110,38V163C110,174,102,183,90,183C79,183,70,174,70,163V38C70,28,79,19,90,19L90,19z',
 			'j' : 'M68,0V21H88C88,21,89,41,89,84C89,126,90,146,88,158C81,185,40,185,32,166C27,155,28,146,28,134H6C6,134,6,140,6,147C6,178,17,193,41,198C65,204,95,194,105,174C111,162,111,161,111,89C111,41,111,21,111,21H130V0H68z',
 			'q' : 'M24,134L6,134L6,112L24,112C24,112,24,60,24,40C24,18,40,0,66,0C92,0,110,18,110,40C110,62,111,148,110,155C110,168,108,170,108,171C110,176,130,178,130,177L130,199C115,201,109,199,96,190C88,198,65,205,46,196C32,190,24,174,24,134zM81,174C73,162,58,145,44,140C44,156,46,165,51,171C59,181,71,183,81,174zM66,22C50,22,44,30,44,70C44,94,44,116,44,116C67,123,90,150,90,150L90,70C90,30,82,22,66,22z',
 			'k' : 'M76,180L96,180L64,106L40,142L40,180L56,180L56,200L0,200L0,180L20,180L20,20L0,20L0,0L56,0L56,20L40,20L40,100L92.0636,19.841L76,20L76,0L136,0L136,20L120,20L76,88L116,180L136,180L136,200L76,200z',
-			'hearts' : 'M100,30C60,7 0,7 0,76C0,131 100,190 100,190C100,190 200,131 200,76C200,7 140,7 100,30z',
-			'diamonds' : 'M184,100C152,120,120,160,100,200C80,160,48,120,16,100C48,80,80,40,100,0C120,40,152,80,184,100z',
-			'spades' : 'M200,120C200,168,144,176,116,156C116,180,116,188,128,200C112,196,88,196,72,200C84,188,84,180,84,156C56,176,0,168,0,120C0,72,60,36,100,0C140,36,200,72,200,120z',
-			'clubs' : 'M80,200C92,184,92,160,92,136C76,180,0,176,0,124C0,80,40,76,68,88C80,92,80,88,72,84C44,64,40,0,100,0C160,0,156,64,128,84C120,88,120,92,132,88C160,76,200,80,200,124C200,176,124,180,108,136C108,160,108,184,120,200C100,196,100,196,80,200z',
-			'crown' : 'M44,60 C45,56 -3,33 0,70 C2,107 39,146 48,150 C57,154 12,107 12,77 C12,45 43,65 44,60 M37,65 C31,64 20,60 19,81 C19,100 63,158 65,149 C65,139 33,102 37,65 M86,56 C87,52 38,28 40,66 C43,103 69,141 78,148 C86,155 54,102 54,71 C54,39 86,60 86,56 M82,65 C77,64 59,54 59,74 C60,95 82,146 84,138 C86,132 78,102 82,65 M154,60 C153,56 203,33 200,70 C197,107 159,146 151,150 C142,154 187,107 187,77 C187,45 155,65 154,60 M161,65 C167,64 179,60 180,81 C181,100 137,158 135,149 C134,139 165,102 161,65 M113,56 C112,52 161,28 158,66 C155,103 130,141 122,148 C114,155 145,102 145,71 C145,39 114,60 113,56 M117,65 C123,64 141,54 141,74 C140,95 118,146 116,138 C114,132 121,102 117,65z',
-			'nine' : 'M157,89C159,188 80,211 16,196L23,160C62,172 100,167 107,119C93,127 83,133 62,132C28,133 0,113 0,70C0,25 37,0 78,0C137,0 157,41 157,89M105,56C100,42 92,34 77,33C59,33 49,49 49,69C52,101 83,104 107,95C107,82 108,66 105,56z',
-			'joker' : 'M141,0L181,0C168,55 161,150 129,183C91,219 15,198 21,141L60,137C58,157 62,166 81,166C102,165 110,143 115,118M6,378C6,306 53,256 119,256C197,256 213,346 187,398C164,438 130,458 88,459C39,458 7,422 6,378M47,377C49,406 67,425 93,425C168,423 182,292 115,290C69,294 47,338 47,377M0,714L42,518L84,518L66,601L159,518L215,518L124,595L191,714L144,714L94,621L55,654L42,714M8,973L50,777L200,777L193,809L85,809L75,854L180,854L173,887L68,887L56,940L173,940L166,973M43,1231L1,1231L44,1035L133,1035C170,1037 197,1051 198,1087C195,1127 169,1143 136,1148C158,1171 171,1206 182,1231L137,1231C116,1182 112,1150 60,1150M67,1121C96,1121 155,1126 156,1087C151,1061 100,1068 78,1068z'
+			//jOker,jo
+			'o' : 'M141,0L181,0C168,55,161,150,129,183C91,219,15,198,21,141L60,137C58,157,62,166,81,166C102,165,110,143,115,118M6,378C6,306,53,256,119,256C197,256,213,346,187,398C164,438,130,458,88,459C39,458,7,422,6,378M47,377C49,406,67,425,93,425C168,423,182,292,115,290C69,294,47,338,47,377M0,714L42,518L84,518L66,601L159,518L215,518L124,595L191,714L144,714L94,621L55,654L42,714M8,973L50,777L200,777L193,809L85,809L75,854L180,854L173,887L68,887L56,940L173,940L166,973M43,1231L1,1231L44,1035L133,1035C170,1037,197,1051,198,1087C195,1127,169,1143,136,1148C158,1171,171,1206,182,1231L137,1231C116,1182,112,1150,60,1150M67,1121C96,1121,155,1126,156,1087C151,1061,100,1068,78,1068z',
+			//Hearts
+			'h' : 'M100,30C60,7,0,7,0,76C0,131,100,190,100,190C100,190,200,131,200,76C200,7,140,7,100,30z',
+			//Diamonds
+			'd' : 'M184,100C152,120,120,160,100,200C80,160,48,120,16,100C48,80,80,40,100,0C120,40,152,80,184,100z',
+			//Spades
+			's' : 'M200,120C200,168,144,176,116,156C116,180,116,188,128,200C112,196,88,196,72,200C84,188,84,180,84,156C56,176,0,168,0,120C0,72,60,36,100,0C140,36,200,72,200,120z',
+			//Clubs
+			'c' : 'M80,200C92,184,92,160,92,136C76,180,0,176,0,124C0,80,40,76,68,88C80,92,80,88,72,84C44,64,40,0,100,0C160,0,156,64,128,84C120,88,120,92,132,88C160,76,200,80,200,124C200,176,124,180,108,136C108,160,108,184,120,200C100,196,100,196,80,200z',
+			//cRown,cr
+			'r' : 'M44,60,C45,56,-3,33,0,70,C2,107,39,146,48,150,C57,154,12,107,12,77,C12,45,43,65,44,60,M37,65,C31,64,20,60,19,81,C19,100,63,158,65,149,C65,139,33,102,37,65,M86,56,C87,52,38,28,40,66,C43,103,69,141,78,148,C86,155,54,102,54,71,C54,39,86,60,86,56,M82,65,C77,64,59,54,59,74,C60,95,82,146,84,138,C86,132,78,102,82,65,M154,60,C153,56,203,33,200,70,C197,107,159,146,151,150,C142,154,187,107,187,77,C187,45,155,65,154,60,M161,65,C167,64,179,60,180,81,C181,100,137,158,135,149,C134,139,165,102,161,65,M113,56,C112,52,161,28,158,66,C155,103,130,141,122,148,C114,155,145,102,145,71,C145,39,114,60,113,56,M117,65,C123,64,141,54,141,74,C140,95,118,146,116,138,C114,132,121,102,117,65z',
+			//Nine
+			'n' : 'M157,89C159,188,80,211,16,196L23,160C62,172,100,167,107,119C93,127,83,133,62,132C28,133,0,113,0,70C0,25,37,0,78,0C137,0,157,41,157,89M105,56C100,42,92,34,77,33C59,33,49,49,49,69C52,101,83,104,107,95C107,82,108,66,105,56z'
 		}, ax = function(n) {
 			var args = arguments.callee.caller.arguments;
 			return args[0] + n * args[2] / 200;
@@ -41,7 +49,14 @@
 			canvas.height = size;
 			canvas.width = size * 3 / 4;
 			return canvas;
-		}
+		}, fixSuit = function(suit) {
+			//hearts, diamonds, spades, clubs
+			return (suit || 'h').substr(0, 1).toLowerCase();
+		}, fixSymbol = function(symbol) {
+			//A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, JOKER, NINE, CROWN
+			symbol = (symbol || 'o').toString().toLowerCase();
+			return symbol.substr((symbol.match(/jo|10|cr/)) ? 1 : 0, 1);
+		};
 		/**
 		 * ### Draw card number side
 		 * canvas.drawPokerCard (x, y, size, suit, point)
@@ -49,34 +64,37 @@
 		 * x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 		 * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
 		 * suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
-		 *           ['hearts', 'diamonds', 'spades', 'clubs']
-		 *           When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
-		 *           Default value is 'hearts'.
+		 *         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+		 *         'h', 'd', 's', 'c' are abbreviation
+		 *         When card point is 'O', 'h' or 'd' means big joker, 's' or 'c' means little joker.
+		 *         Default value is 'h'.
 		 * point - Card point. The value is case insensitive and it should be one of these value in []:
-		 *           ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-		 *           Default value is 'JOCKER'.
+		 *         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+		 *         'O'(letter O) is abbreviation of 'JOKER'
+		 *         Default value is 'O'.
 		 *
 		 * Example:
-		 * canvas.drawPokerCard (0, 400, 100, 'hearts', 'joker');
+		 * canvas.drawPokerCard (0, 400, 100, 'hearts', 'O');
 		 * canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
 		 */
 		CanvasRenderingContext2D.prototype.drawPokerCard = function(x, y, size, suit, point) {
-			suit = (suit || 'hearts').toLowerCase();
-			point = (point || 'joker').toLowerCase();
+
+			suit = fixSuit(suit);
+			point = fixSymbol(point);
 
 			this.drawEmptyCard(ax(0), ay(0), as(200));
-			this.fillStyle = (suit === 'hearts' || suit === 'diamonds') ? '#a22' : '#000';
+			this.fillStyle = (suit === 'h' || suit === 'd') ? '#a22' : '#000';
 			if (size >= 100) {
-				if (point !== 'joker') {
+				if (point !== 'o') {
 					this.fillPokerSymbol(ax(40), ay(65), as(70), suit);
 					this.fillPokerSymbol(ax(10), ay(10), as(40), point);
 					this.fillPokerSymbol(ax(11), ay(55), as(25), suit);
 					this.fillPokerSymbol(ax(140), ay(190), as(-40), point);
 					this.fillPokerSymbol(ax(139), ay(145), as(-25), suit);
 				} else {
-					this.fillPokerSymbol(ax(11), ay(10), as(18), 'joker');
-					this.fillPokerSymbol(ax(139), ay(190), as(-18), 'joker');
-					if (suit === 'hearts' || suit === 'diamonds') {
+					this.fillPokerSymbol(ax(11), ay(10), as(18), 'o');
+					this.fillPokerSymbol(ax(139), ay(190), as(-18), 'o');
+					if (suit === 'h' || suit === 'd') {
 						this.drawPokerCrown(ax(38), ay(63), as(74), '#b55', '#a22');
 						this.drawPokerCrown(ax(40), ay(65), as(70), '#fdf98b', '#e7bd4f', '#a22');
 					} else {
@@ -85,12 +103,12 @@
 					}
 				}
 			} else {
-				if (point !== 'joker') {
+				if (point !== 'o') {
 					this.fillPokerSymbol(ax(30), ay(75), as(100), suit);
 					this.fillPokerSymbol(ax(15), ay(15), as(50), point);
 				} else {
-					this.fillPokerSymbol(ax(11), ay(10), as(22), 'joker');
-					if (suit === 'hearts' || suit === 'diamonds') {
+					this.fillPokerSymbol(ax(11), ay(10), as(22), 'o');
+					if (suit === 'hearts' || suit === 'd') {
 						this.drawPokerCrown(ax(45), ay(73), as(89), '#b55', '#a22');
 						this.drawPokerCrown(ax(47), ay(75), as(85), '#fdf98b', '#e7bd4f', '#a22');
 					} else {
@@ -107,41 +125,41 @@
 		 *
 		 * x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 		 * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * foregroundColor - Foreground color. Default value is '#AA2222'.
-		 * backgroundColor - Background color. Default value is '#BB5555'.
+		 * foregroundColor - Foreground color. Default value is '#BB5555'.
+		 * backgroundColor - Background color. Default value is '#AA2222'.
 		 *
 		 * Example:
 		 * canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
 		 * canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 		 */
 		CanvasRenderingContext2D.prototype.drawPokerBack = function(x, y, size, foregroundColor, backgroundColor) {
-			foregroundColor = foregroundColor || '#a22';
-			backgroundColor = backgroundColor || '#b55';
+			foregroundColor = foregroundColor || '#b55';
+			backgroundColor = backgroundColor || '#a22';
 
-			this.drawEmptyCard(x, y, size, foregroundColor, backgroundColor);
+			this.drawEmptyCard(x, y, size);
 
 			this.fillStyle = foregroundColor;
 			this.fillRoundRect(ax(10), ay(10), as(130), as(180), as(8));
-			this.strokeStyle = backgroundColor;
+			this.strokeStyle = foregroundColor;
 			this.strokeRoundRect(ax(18), ay(18), as(114), as(164), as(4));
-			this.fillStyle = backgroundColor;
+			this.fillStyle = foregroundColor;
 			this.fillRoundRect(ax(26), ay(26), as(96), as(148), as(24), true);
 
-			this.fillPokerSymbol(ax(24), ay(24), as(20), 'spades');
-			this.fillPokerSymbol(ax(106), ay(24), as(20), 'spades');
-			this.fillPokerSymbol(ax(44), ay(176), as(-20), 'spades');
-			this.fillPokerSymbol(ax(126), ay(176), as(-20), 'spades');
+			this.fillPokerSymbol(ax(24), ay(24), as(20), 's');
+			this.fillPokerSymbol(ax(106), ay(24), as(20), 's');
+			this.fillPokerSymbol(ax(44), ay(176), as(-20), 's');
+			this.fillPokerSymbol(ax(126), ay(176), as(-20), 's');
 			this.fillStyle = foregroundColor;
 			this.fillRoundRect(ax(50), ay(40), as(50), as(120), as(24));
-			this.fillPokerSymbol(ax(32), ay(54), as(86), 'spades');
-			this.fillPokerSymbol(ax(30), ay(60), as(16), 'spades');
-			this.fillPokerSymbol(ax(104), ay(60), as(16), 'spades');
-			this.fillPokerSymbol(ax(30), ay(128), as(16), 'spades');
-			this.fillPokerSymbol(ax(104), ay(128), as(16), 'spades');
-			this.strokePokerSymbol(ax(31), ay(53), as(88), 'spades');
-			this.fillStyle = backgroundColor;
-			this.fillPokerSymbol(ax(47), ay(80), as(35), 'nine');
-			this.fillPokerSymbol(ax(77), ay(80), as(35), 'nine');
+			this.fillPokerSymbol(ax(32), ay(54), as(86), 's');
+			this.fillPokerSymbol(ax(30), ay(60), as(16), 's');
+			this.fillPokerSymbol(ax(104), ay(60), as(16), 's');
+			this.fillPokerSymbol(ax(30), ay(128), as(16), 's');
+			this.fillPokerSymbol(ax(104), ay(128), as(16), 's');
+			this.strokePokerSymbol(ax(31), ay(53), as(88), 's');
+			this.fillStyle = foregroundColor;
+			this.fillPokerSymbol(ax(47), ay(80), as(35), 'c');
+			this.fillPokerSymbol(ax(77), ay(80), as(35), 'c');
 		};
 
 		/**
@@ -217,7 +235,7 @@
 			}, ay = function(n) {
 				return ( relativeY = y + n * size / 200);
 			};
-			svgpathArray = svgPath.replace(/ *([MmZzLlHhVvCcSsQqTtAa]) */g, '|$1,').replace(/^\||\|[zZ],/g, '').split(/\|/);
+			svgpathArray = svgPath.replace(/ *([MZLHVCSQTA]) */gi, '|$1,').replace(/^\||\|[Z],/gi, '').split(/\|/);
 
 			this.beginPath();
 			for (pathNumber in svgpathArray) {
@@ -242,18 +260,21 @@
 		 *
 		 * x, y   - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 		 * size   - The pixel size of symbol. Default value is 200.
-		 * symbol - The name of symbol.  The value is case insensitive and it should be one of these value in []:
-		 *          ['hearts', 'diamonds', 'spades', 'clubs']
-		 *          ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-		 *          ['JOKER']  // uppercase 'JOKER'
-		 *          ['CROWN']  // a part of crown, to jointing a crown of JOKER card
-		 *          ['NINE']   // bold '9' for jointing '99' pattern
+		 * symbol - The name of symbol.  Value is case insensitive and should be one of below:
+		 *          ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+		 *          'h', 'd', 's', 'c' are abbreviation
+		 *          ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+		 *          'O'(letter O) is abbreviation of 'JOKER'
+		 *          ['R', 'CROWN']  // crown, a part of crown, to jointing a crown of JOKER card
+		 *          ['N', 'NINE']  // Nine, bold '9' for jointing '99' pattern
 		 *
 		 * Example:
 		 * canvas.fillPokerSymbol ('hearts', 0, 0, 200);
 		 */
 		CanvasRenderingContext2D.prototype.drawPokerSymbol = function(x, y, size, symbol) {
-			symbol = (symbol || 'hearts').toLowerCase(); ((symbolPath[symbol]) && this.svgCurve(x, y, size, symbolPath[symbol]));
+			symbol = fixSymbol(symbol);
+			if (symbolPath[symbol])
+				this.svgCurve(x, y, size, symbolPath[symbol]);
 		};
 		CanvasRenderingContext2D.prototype.strokePokerSymbol = function(x, y, size, symbol) {
 			this.drawPokerSymbol(x + 0.5, y + 0.5, size - 1, symbol);
@@ -289,21 +310,21 @@
 			fillLinGrad.addColorStop(1, endColor);
 
 			this.fillStyle = fillLinGrad;
-			this.fillPokerSymbol(ax(0), ay(0), as(200), 'crown');
+			this.fillPokerSymbol(ax(0), ay(0), as(200), 'r');
 			this.fillRoundRect(ax(88), ay(42), as(23), as(110), as(12));
-			this.fillPokerSymbol(ax(86), ay(18), as(27), 'spades');
+			this.fillPokerSymbol(ax(86), ay(18), as(27), 's');
 			this.fillRoundRect(ax(40), ay(150), as(120), as(24), as(10));
 			this.fillStyle = fillColor;
-			this.fillPokerSymbol(ax(92), ay(26), as(15), 'diamonds');
-			this.fillPokerSymbol(ax(93), ay(60), as(13), 'hearts');
-			this.fillPokerSymbol(ax(93), ay(80), as(13), 'hearts');
-			this.fillPokerSymbol(ax(93), ay(100), as(13), 'hearts');
-			this.fillPokerSymbol(ax(93), ay(120), as(13), 'hearts');
-			this.fillPokerSymbol(ax(93), ay(155), as(13), 'hearts');
-			this.fillPokerSymbol(ax(73), ay(155), as(13), 'hearts');
-			this.fillPokerSymbol(ax(53), ay(155), as(13), 'hearts');
-			this.fillPokerSymbol(ax(113), ay(155), as(13), 'hearts');
-			this.fillPokerSymbol(ax(133), ay(155), as(13), 'hearts');
+			this.fillPokerSymbol(ax(92), ay(26), as(15), 'd');
+			this.fillPokerSymbol(ax(93), ay(60), as(13), 'h');
+			this.fillPokerSymbol(ax(93), ay(80), as(13), 'h');
+			this.fillPokerSymbol(ax(93), ay(100), as(13), 'h');
+			this.fillPokerSymbol(ax(93), ay(120), as(13), 'h');
+			this.fillPokerSymbol(ax(93), ay(155), as(13), 'h');
+			this.fillPokerSymbol(ax(73), ay(155), as(13), 'h');
+			this.fillPokerSymbol(ax(53), ay(155), as(13), 'h');
+			this.fillPokerSymbol(ax(113), ay(155), as(13), 'h');
+			this.fillPokerSymbol(ax(133), ay(155), as(13), 'h');
 		};
 
 		/**
@@ -312,20 +333,15 @@
 		 *
 		 * x, y       - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 		 * size       - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * startColor - Start color of gradient background color. Default value is '#AA2222'.
-		 * endColor   - End color of gradient background color. Default value is '#BB5555'.
 		 *
 		 * Example:
 		 * canvas.drawEmptyCard(0, 0, 200);
 		 */
-		CanvasRenderingContext2D.prototype.drawEmptyCard = function(x, y, size, startColor, endColor) {
+		CanvasRenderingContext2D.prototype.drawEmptyCard = function(x, y, size) {
 			var fillLinGrad;
 
-			startColor = startColor || '#a22';
-			endColor = endColor || '#b55';
-
 			fillLinGrad = this.createLinearGradient(ax(5), ay(5), ax(55), ay(200));
-			fillLinGrad.addColorStop(0, '#ffffff');
+			fillLinGrad.addColorStop(0, '#fff');
 			fillLinGrad.addColorStop(1, '#e0e0e0');
 
 			this.fillStyle = fillLinGrad;
@@ -343,16 +359,18 @@
 			 *
 			 * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4.
 			 *         Default value is 200.
-			 * suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
-			 *         ['hearts', 'diamonds', 'spades', 'clubs']
-			 *         When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
-			 *         Default value is 'hearts'.
-			 * point - Card point. The value is case insensitive and it should be one of these value in []:
-			 *         ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-			 *         Default value is 'JOCKER'.
-			 *
+			 * suit  - Poker suit. Value is case insensitive and should be one of below:
+			 *         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+			 *         'h', 'd', 's', 'c' are abbreviation
+			 *         For joker, 'h' & 'd' means big joker, 's' & 'c' means little joker.
+			 *         Default value is 'h'.
+			 * point - Card point. Value is case insensitive and should be one of below:
+			 *         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+			 *         'O'(letter O) is abbreviation of 'JOKER'
+			 *         Default value is 'O'.
+			 *			 *
 			 * Example:
-			 * document.body.appendChild(Poker.getCardCanvas(100, 'hearts', 'Q'));
+			 * document.body.appendChild(Poker.getCardCanvas(100, 'h', 'Q'));
 			 */
 			getCardImage : function(size, suit, point) {
 				var image = document.createElement('img');
@@ -376,8 +394,8 @@
 			 *
 			 * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
 			 *                   Default value is 200.
-			 * foregroundColor - Foreground color. Default value is '#AA2222'.
-			 * backgroundColor - Background color. Default value is '#BB5555'.
+			 * foregroundColor - Foreground color. Default value is '#BB5555'.
+			 * backgroundColor - Background color. Default value is '#AA2222'.
 			 *
 			 * Example:
 			 * document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
@@ -390,7 +408,6 @@
 			getBackCanvas : function(size, foregroundColor, backgroundColor) {
 				var canvas = pc(size);
 				canvas.getContext('2d').drawPokerBack(0, 0, size, foregroundColor, backgroundColor);
-				console.log(canvas.height);
 				return canvas;
 			},
 			getBackData : function(size, foregroundColor, backgroundColor) {

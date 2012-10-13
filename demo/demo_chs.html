@@ -5,7 +5,7 @@
 		<title>Poker.JS demo</title>
 		<style>
 			div, select, option, input, button {
-				font: 15px Verdana;
+				font: 15px 'Microsoft Yahei', Verdana;
 			}
 			div {
 				margin: 8px 0;
@@ -58,19 +58,20 @@
 	</head>
 	<body>
 		<div class="controller">
-			<span>Container:
+			<span>容器:
 				<select id="selContainer">
-					<option value="i">Create &lt;img&gt;</option>
-					<option value="c" selected="selected">Create &lt;canvas&gt;</option>
-					<option value="d">Draw in exist canvas</option>
+					<option value="i">创建 &lt;img&gt;</option>
+					<option value="c" selected="selected">创建 &lt;canvas&gt;</option>
+					<option value="d">在 canvas 里绘画</option>
 					<option value="p">PNG Image Data</option>
 				</select></span>
-			<span>Type:
+			<span>类型:
 				<select id="selType">
-					<option value="f" selected="selected">Card point side</option>
-					<option value="b">Card back</option>
+					<option value="f" selected="selected">牌面</option>
+					<option value="b">牌背</option>
 				</select></span>
-			<span>Size:
+
+			<span>尺寸:
 				<select id="selSize">
 					<option>40</option>
 					<option>52</option>
@@ -87,14 +88,14 @@
 					<option>400</option>
 					<option>500</option>
 				</select></span>
-			<span class="cardContainer">Suit:
+			<span class="cardContainer">花样:
 				<select id="selSuit">
-					<option value="h" selected="selected">&hearts; Hearts</option>
-					<option value="d">&diams; Diamonds</option>
-					<option value="s">&spades; Spades</option>
-					<option value="c">&clubs; Clubs</option>
+					<option value="h" selected="selected">&hearts; 红桃</option>
+					<option value="d">&diams; 方块</option>
+					<option value="s">&spades; 黑桃</option>
+					<option value="c">&clubs; 梅花</option>
 				</select></span>
-			<span class="cardContainer">Point:
+			<span class="cardContainer">点数:
 				<select id="selPoint">
 					<option selected="selected">A</option>
 					<option>2</option>
@@ -113,37 +114,37 @@
 				</select></span>
 			<span class="cardContainer">
 				<button id="btnRndCard">
-					Rnd Card
+					随机牌
 				</button></span>
 
-			<span class="backContainer">Foreground:
+			<span class="backContainer">前景:
 				<input type="text" id="txtForeColor" />
 			</span>
-			<span class="backContainer">Background:
+			<span class="backContainer">背景:
 				<input type="text" id="txtBackColor" />
 			</span>
 			<span class="backContainer">
 				<button id="btnRndColor">
-					Rnd Color
+					随机颜色
 				</button></span>
 
 		</div>
 		<div id="command">
-			<span>Code:</span>
+			<span>代码:</span>
 			<input type="text" id='code' value="code here." />
 			<button id="btnRunCode">
-				Run Code
+				执行代码
 			</button>
 		</div>
 		<div class="container">
 			<div class="title">
-				Dom container, click title to toggle expand or collapse, click card to add random rotate css. IE does not support
+				Dom 容器，点击标题展开或收缩，点击牌应用随机CSS旋转。IE 不支持
 			</div>
 			<div class="content" id="domContainer"></div>
 		</div>
 		<div class="container">
 			<div class="title">
-				Canvas container, click title to toggle expand or collapse
+				Canvas 容器 ，点击标题展开或收缩
 			</div>
 			<div class="content" id="drawContainer">
 				<canvas width="800" height="400"></canvas>
@@ -151,7 +152,7 @@
 		</div>
 		<div class="container">
 			<div class="title">
-				PNG image data container, click title to toggle expand or collapse
+				PNG image data 容器，点击标题展开或收缩
 			</div>
 			<div class="content" id="dataContainer"></div>
 		</div>

@@ -12,14 +12,16 @@ Poker.getCardData   (size, suit, point)
 ```
 ```text
 size  - Height pixel of card. The ratio of card width and height is fixed to 3:4.
-          Default value is 200.
-suit  - Poker suit. The value is case insensitive and it should be one of these value in []: 
-          ['hearts', 'diamonds', 'spades', 'clubs'] 
-          When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
-          Default value is 'hearts'.
-point - Card point. The value is case insensitive and it should be one of these value in []: 
-        ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-        Default value is 'JOCKER'.
+        Default value is 200.
+suit  - Poker suit. Value is case insensitive and should be one of below: 
+        ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        'h', 'd', 's', 'c' are abbreviation
+        For joker, 'h' & 'd' means big joker, 's' & 'c' means little joker.
+        Default value is 'h'.
+point - Card point. Value is case insensitive and should be one of below: 
+        ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(letter O) is abbreviation of 'JOKER'
+        Default value is 'O'.
 ```
 ```js
 //Example:
@@ -34,9 +36,9 @@ Poker.getBackData   (size[, foregroundColor, backgroundColor]])
 ```
 ```text
 size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
-                    Default value is 200.
-foregroundColor - Foreground color. Default value is '#AA2222'.
-backgroundColor - Background color. Default value is '#BB5555'.
+                  Default value is 200.
+foregroundColor - Foreground color. Default value is '#BB5555'.
+backgroundColor - Background color. Default value is '#AA2222'.
 ```
 ```js
 //Example:
@@ -50,15 +52,17 @@ document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```
 ```text
-x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-foregroundColor - Foreground color. Default value is '#AA2222'.
-backgroundColor - Background color. Default value is '#BB5555'.
+x, y            - The x, y coordinate of top left corner of card in canvas.
+                  Default value is 0, 0.
+size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
+                  Default value is 200.
+foregroundColor - Foreground color. Default value is '#BB5555'.
+backgroundColor - Background color. Default value is '#AA2222'.
 ```
 ```js
 //Example:
-canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
-canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
+canvas.drawPokerBack (10, 10, 300, '#b55', '#a22')
+canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 ```
 
 ### Draw card number side
@@ -66,15 +70,19 @@ canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
 canvas.drawPokerCard (x, y, size, suit, point)
 ```
 ```text
-x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-suit  - Poker suit. The value is case insensitive and it should be one of these value in []: 
-        ['hearts', 'diamonds', 'spades', 'clubs'] 
-        When card point is 'JOKER', 'heart' or 'diamonds' means big joker, 'spades' or 'clubs' means little joker.
-        Default value is 'hearts'.
-point - Card point. The value is case insensitive and it should be one of these value in []: 
-        ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-        Default value is 'JOCKER'.
+x, y  - The x, y coordinate of top left corner of card in canvas. 
+        Default value is 0, 0.
+size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. 
+        Default value is 200.
+suit  - Poker suit. Value is case insensitive and should be one of below: 
+        ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        'h', 'd', 's', 'c' are abbreviation
+        For joker, 'h' & 'd' means big joker, 's' & 'c' means little joker.
+        Default value is 'h'.
+point - Card point. Value is case insensitive and should be one of below: 
+        ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(letter O) is abbreviation of 'JOKER'
+        Default value is 'O'.
 ```
 ```js
 //Example:
@@ -107,12 +115,13 @@ canvas.roundRect (50, 50, 100, 100, 30, true);
 canvas.svgCurve (x, y, size, svgPath)
 ```
 ```text
-x, y    - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
+x, y    - The x, y coordinate of top left corner of card in canvas.
+          Default value is 0, 0.
 size    - The pixel size of the curve.
 svgPath - Value of property 'd' of SVG 'path' method.
-          When create the curve by svg software, please move the origin of coordinate be 0,0.
+          If create the curve via software, set the coordinate origin to 0,0.
           And keep the bigger size of height and width to 200px.
-          Don't use AQ or T methon in svg software, browser canvas have not relative methon to render it.
+          Don't use AQ or T methon in svg software, JS have not relative methon.
 ```
 ```js
 //Example, draw a heart symbol:
@@ -126,14 +135,16 @@ canvas.strokePokerSymbol (x, y, size, symbol)
 canvas.fillPokerSymbol   (x, y, size, symbol)
 ```
 ```text
-x, y   - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
+x, y   - The x, y coordinate of top left corner of card in canvas.
+         Default value is 0, 0.
 size   - The pixel size of symbol. Default value is 200.
-symbol - The name of symbol.  The value is case insensitive and it should be one of these value in []:
-         ['hearts', 'diamonds', 'spades', 'clubs']
-         ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-         ['JOKER']  // uppercase 'JOKER'
-         ['CROWN']  // a part of crown, to jointing a crown of JOKER card
-         ['NINE']   // bold '9' for jointing '99' pattern 
+symbol - The name of symbol.  Value is case insensitive and should be one of below:
+         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+         'h', 'd', 's', 'c' are abbreviation
+         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+         'O'(letter O) is abbreviation of 'JOKER'
+         ['R', 'CROWN']  // crown, a part of crown, to jointing a crown of JOKER card
+         ['N', 'NINE']  // Nine, bold '9' for jointing '99' pattern
 ```
 ```js
 //Example:
@@ -158,13 +169,11 @@ canvas.drawPokerCrown(0, 0, 200);
 
 ### Draw blank card
 ```text
-canvas.drawEmptyCard (x, y, size[, startColor, endColor])
+canvas.drawEmptyCard (x, y, size)
 ```
 ```text
 x, y       - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 size       - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-startColor - Start color of gradient background color. Default value is '#AA2222'.
-endColor   - End color of gradient background color. Default value is '#BB5555'.
 ```
 ```js
 //Example:
@@ -189,13 +198,14 @@ Poker.getCardData   (size, suit, point)
 ```text
 size  - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
 suit  - 牌面花色。取值大小写不敏感，必须为下列[]内的值之一：
-        ['hearts', 'diamonds', 'spades', 'clubs']
-        值对应红桃，方块，黑桃，梅花
+        ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        值对应红桃，方块，黑桃，梅花, 'h', 'd', 's', 'c' 是缩略写法
         当牌面点数为'JOKER'时，红桃和方块表示牌为大王；黑桃和梅花表示牌为小王。
-        缺省值为'hearts'。
+        缺省值为'h'
 point - 牌面点数。取值大小写不敏感，必须为下列[]内的值之一：
-        ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-        'JOKER'表示大王小王。缺省值为'JOCKER'。
+        ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(字母O)是'JOKER'的缩略写法
+        缺省值为'O'
 ```
 ```js
 //例子:
@@ -210,12 +220,12 @@ Poker.getBackData   (size[, foregroundColor, backgroundColor])
 ```
 ```text
 size            - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
-foregroundColor - 前景色。缺省值为'#a22'。
-backgroundColor - 背景色。缺省值为'#b55'。
+foregroundColor - 前景色。缺省值为'#BB5555'。
+backgroundColor - 背景色。缺省值为'#AA2222'。
 ```
 ```js
 //例子:
-document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
+document.body.appendChild(Poker.getBackCanvas(300, '#7A7BB8', '#2E319C'));
 ```
 
 ## 在`window.CanvasRenderingContext2D`里扩展了2个公开方法
@@ -227,13 +237,13 @@ canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 ```text
 x, y            - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size            - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
-foregroundColor - 前景色。缺省值为'#a22'。
-backgroundColor - 背景色。缺省值为'#b55'。
+foregroundColor - 前景色。缺省值为'#BB5555'。
+backgroundColor - 背景色。缺省值为'#AA2222'。
 ```
 ```js
 //例子：
-canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
-canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
+canvas.drawPokerBack (10, 10, 300, '#b55', '#a22')
+canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 ```
 
 ### 画牌面
@@ -244,13 +254,14 @@ canvas.drawPokerCard (x, y, size, suit, point)
 x, y  - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size  - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
 suit  - 牌面花色。取值大小写不敏感，必须为下列[]内的值之一：
-        ['hearts', 'diamonds', 'spades', 'clubs']
-        值对应红桃，方块，黑桃，梅花
+        ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        值对应红桃，方块，黑桃，梅花, 'h', 'd', 's', 'c' 是缩略写法
         当牌面点数为'JOKER'时，红桃和方块表示牌为大王；黑桃和梅花表示牌为小王。
-        缺省值为'hearts'。
+        缺省值为'h'
 point - 牌面点数。取值大小写不敏感，必须为下列[]内的值之一：
-        ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER']
-        'JOKER'表示大王小王。缺省值为'JOCKER'。
+        ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(字母O)是'JOKER'的缩略写法
+        缺省值为'O'
 ```
 ```js
 //例子：
@@ -305,12 +316,12 @@ canvas.fillPokerSymbol   (x, y, size, symbol)
 x, y   - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size   - 符号的象素尺寸。缺省值为200。
 symbol - 符号的名称，取值大小写不敏感，必须为下列[]内的值之一：
-         ['hearts', 'diamonds', 'spades', 'clubs']
-         ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-         ['JOKER']  // 大写的'JOKER'
-         ['CROWN']  // 皇冠的一部分，用来为大小王牌拼出王冠
-         ['NINE']   // 粗粗的'9'用来拼出'99'图案
-
+         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
+        值对应红桃，方块，黑桃，梅花, 'h', 'd', 's', 'c' 是缩略写法
+         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
+        'O'(字母O)是'JOKER'的缩略写法
+         ['O', 'CROWN']  // 皇冠的一部分，用来为大小王牌拼出王冠
+         ['N', 'NINE']   // 粗粗的'9'用来拼出'99'图案
 ```
 ```js
 //例子：
@@ -335,13 +346,11 @@ canvas.drawPokerCrown(0, 0, 200);
 
 ### 画空白牌
 ```text
-canvas.drawEmptyCard (x, y, size[, startColor, endColor])
+canvas.drawEmptyCard (x, y, size)
 ```
 ```text
 x, y       - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size       - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
-startColor - 背景渐变色的起始颜色。缺省值为'#AA2222'。
-endColor   - 背景渐变色的终止颜色。缺省值为'#BB5555'。
 ```
 ```js
 //例子：
