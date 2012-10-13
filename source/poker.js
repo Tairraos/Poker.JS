@@ -2,8 +2,9 @@
  * MIT license source code.
  *
  * poker.js
+ * Project on https://github.com/Tairraos/Poker.JS
  * Created by Xiaole Tao (http://xiaole.happylive.org)
- * Last update - 2012/09/26.
+ * Last update - 2012/10/13.
  */
 (function() {
 	if (window.CanvasRenderingContext2D) {

@@ -2,9 +2,10 @@
  * MIT license source code.
  *
  * poker.js
+ * Project on https://github.com/Tairraos/Poker.JS
  * Created by Xiaole Tao (http://xiaole.happylive.org)
- * Last update - 2012/09/26.
- *
+ * Last update - 2012/10/13.
+ * 
  * This file used some tricks and reduce readability, but minified file small and quickly.
  *
  */
