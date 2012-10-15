@@ -1,103 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Poker.js by Tairraos</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<title>Poker.js by Tairraos</title>
+		<link rel="stylesheet" href="stylesheets/styles.css">
+		<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="javascripts/main.js"></script>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  </head>
-  <body>
+	</head>
+	<body>
 
-      <header>
-        <h1>Poker.js</h1>
-        <p>This is a JS lib extend HTML5 canvas, allow user easly draw poker to canvas or create dom image.</p>
-      </header>
+		<header>
+			<h1>Poker.js</h1>
+			<p>
+				This is a JS lib extend HTML5 canvas, allow user easly draw poker to canvas or create dom image.
+			</p>
+		</header>
 
-      <div id="banner">
-        <span id="logo"></span>
+		<div id="banner">
+			<span id="logo"></span>
 
-        <a href="https://github.com/Tairraos/Poker.JS" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/Tairraos/Poker.JS/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/Tairraos/Poker.JS/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+			<a href="https://github.com/Tairraos/Poker.JS" class="button fork"><strong>View On GitHub</strong></a>
+			<div class="downloads">
+				<span>Downloads:</span>
+				<ul>
+					<li>
+						<a href="https://github.com/Tairraos/Poker.JS/zipball/master" class="button">ZIP</a>
+					</li>
+					<li>
+						<a href="https://github.com/Tairraos/Poker.JS/tarball/master" class="button">TAR</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h1>Poker.JS</h1>
+		<div class="wrapper">
+			<section>
+				<h1>Poker.JS</h1>
 
-<p><a href="#chinese-version-readme">Chinese version readme 中文版本读我文档</a></p>
+				<p>
+					<a href="#chinese-version-readme">Chinese version readme 中文版本读我文档</a>
+				</p>
 
-<h1>Usage</h1>
+				<h1>Usage</h1>
 
-<p>First, load poker.js:</p>
+				<p>
+					First, load poker.js:
+				</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"poker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+				<div class="highlight">
+					<pre>&lt;<span class="nt">script </span><span class="na">src=</span><span class="s">"poker.min.js"</span>&gt;&lt;<span class="nt">/script</span>&gt;
+</pre>
+				</div>
+				<p>
+					Then there have 3 ways to create card by your choice
+				</p>
 
-<p>Then there have 3 ways to create card by your choice</p>
+				<h2>Way 1, Create DOM element</h2>
 
-<h2>Way 1, Create DOM element</h2>
+				<h4>Call
+				<code>
+					Poker.getCardImage
+				</code> or
+				<code>
+					Poker.getCardCanvas
+				</code> to get <img> or  element</h4>
 
-<h4>Call <code>Poker.getCardImage</code> or <code>Poker.getCardCanvas</code> to get <img> or  element</h4>
-
-<div class="highlight"><pre><span class="c1">//insert a &lt;img&gt; to the end of body</span>
+				<div class="highlight">
+					<pre><span class="c1">//insert a &lt;img&gt; to the end of body</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardImage</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="s1">'hearts'</span><span class="p">,</span><span class="s1">'q'</span><span class="p">));</span>
 <span class="c1">//insert a &lt;canvas&gt; to the end of body</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardCanvas</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="s1">'hearts'</span><span class="p">,</span><span class="s1">'q'</span><span class="p">));</span>
-</pre></div>
+</pre>
+				</div>
+				<h2>Way 2, Get base64 png image data</h2>
 
-<h2>Way 2, Get base64 png image data</h2>
+				<h4>Call
+				<code>
+					Poker.getCardData
+				</code> to get image data</h4>
 
-<h4>Call <code>Poker.getCardData</code> to get image data</h4>
-
-<div class="highlight"><pre><span class="c1">//get image data and store in variable pokerHQ</span>
+				<div class="highlight">
+					<pre><span class="c1">//get image data and store in variable pokerHQ</span>
 <span class="kd">var</span> <span class="nx">pokerHQ</span> <span class="o">=</span> <span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardData</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="s1">'hearts'</span><span class="p">,</span><span class="s1">'q'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<h2>Way 3, Draw card in your own canvas</h2>
 
-<h2>Way 3, Draw card in your own canvas</h2>
+				<h4>Add your own canvas to DOM</h4>
 
-<h4>Add your own canvas to DOM</h4>
+				<div class="highlight">
+					<pre>&lt;<span class="nt">canvas</span> <span class="na">id=</span><span class="s">"myowncanvas"</span> <span class="na">width=</span><span class="s">"1280"</span> <span class="na">height=</span><span class="s">"720"</span>&gt;&lt;<span class="nt">/canvas</span>&gt;
+</pre>
+				</div>
+				<h4>Get canvas 2d object and draw card</h4>
 
-<div class="highlight"><pre><span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"myowncanvas"</span> <span class="na">width=</span><span class="s">"1280"</span> <span class="na">height=</span><span class="s">"720"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
-</pre></div>
-
-<h4>Get canvas 2d object and draw card</h4>
-
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myowncanvas'</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
+				<div class="highlight">
+					<pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myowncanvas'</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerCard</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<hr>
+				<h1>Methon and parameters</h1>
 
-<hr><h1>Methon and parameters</h1>
+				<h2>Draw card number side</h2>
 
-<h2>Draw card number side</h2>
+				<h4>Method</h4>
 
-<h4>Method</h4>
-
-<div class="highlight"><pre>Poker.getCardImage   (size, suit, point)
+				<div class="highlight">
+					<pre>Poker.getCardImage   (size, suit, point)
 Poker.getCardCanvas  (size, suit, point)
 Poker.getCardData    (size, suit, point)
 canvas.drawPokerCard (x, y, size, suit, point)
-</pre></div>
+</pre>
+				</div>
+				<h4>Parameters</h4>
 
-<h4>Parameters</h4>
-
-<div class="highlight"><pre>x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
+				<div class="highlight">
+					<pre>x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
 suit  - Poker suit. Value is case insensitive and should be one of below: 
         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
@@ -108,103 +134,143 @@ point - Card point. Value is case insensitive and should be one of below:
         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
         'O'(letter O) is abbreviation of 'JOKER'
         Default value is 'O'.
-</pre></div>
+</pre>
+				</div>
+				<h4>Example</h4>
 
-<h4>Example</h4>
-
-<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardCanvas</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">));</span>
+				<div class="highlight">
+					<pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardCanvas</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">));</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerCard</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'joker'</span><span class="p">);</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerCard</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<h2>Draw card back side</h2>
 
-<h2>Draw card back side</h2>
+				<h4>Method</h4>
 
-<h4>Method</h4>
-
-<div class="highlight"><pre>Poker.getBackImage   (size[, foregroundColor, backgroundColor])
+				<div class="highlight">
+					<pre>Poker.getBackImage   (size[, foregroundColor, backgroundColor])
 Poker.getBackCanvas  (size[, foregroundColor, backgroundColor])
 Poker.getBackData    (size[, foregroundColor, backgroundColor])
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
-</pre></div>
+</pre>
+				</div>
+				<h4>Parameters</h4>
 
-<h4>Parameters</h4>
-
-<div class="highlight"><pre>x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
+				<div class="highlight">
+					<pre>x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
 size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
 foregroundColor - Foreground color. Default value is '#BB5555'.
 backgroundColor - Background color. Default value is '#AA2222'.
-</pre></div>
+</pre>
+				</div>
+				<h4>Example</h4>
 
-<h4>Example</h4>
-
-<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getBackCanvas</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="s1">'#7A7BB8'</span><span class="p">,</span> <span class="s1">'#2E319C'</span><span class="p">));</span>
+				<div class="highlight">
+					<pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getBackCanvas</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="s1">'#7A7BB8'</span><span class="p">,</span> <span class="s1">'#2E319C'</span><span class="p">));</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerBack</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'#b55'</span><span class="p">,</span> <span class="s1">'#a22'</span><span class="p">)</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerBack</span> <span class="p">(</span><span class="mi">375</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'#7A7BB8'</span><span class="p">,</span> <span class="s1">'#2E319C'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<p>
+					<br>
+					<br>
+					<br>
+				</p>
 
-<p><br><br><br></p>
+				<hr>
+				<h1>Chinese version readme</h1>
 
-<hr><h1>Chinese version readme</h1>
+				<h1>中文版本读我文档</h1>
 
-<h1>中文版本读我文档</h1>
+				<hr>
+				<p>
+					<br>
+					<br>
+				</p>
 
-<hr><p><br><br></p>
+				<h1>使用方法</h1>
 
-<h1>使用方法</h1>
+				<p>
+					首先，加载 poker.js
+				</p>
 
-<p>首先，加载 poker.js</p>
+				<div class="highlight">
+					<pre>&lt;<span class="nt">script </span><span class="na">src=</span><span class="s">"poker.min.js"</span>&gt;&lt;<span class="nt">/script</span>&gt;
+</pre>
+				</div>
+				<p>
+					接下去你可以从3种方法里选择一种来创建牌
+				</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"poker.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+				<h2>方法1，创建DOM元素</h2>
 
-<p>接下去你可以从3种方法里选择一种来创建牌</p>
+				<h4>调用
+				<code>
+					Poker.getCardImage
+				</code>或
+				<code>
+					Poker.getCardCanvas
+				</code>来获取
+				<code>
+					&lt;img&gt;
+				</code>或
+				<code>
+					&lt;canvas&gt;
+				</code>元素</h4>
 
-<h2>方法1，创建DOM元素</h2>
-
-<h4>调用<code>Poker.getCardImage</code>或<code>Poker.getCardCanvas</code>来获取<code>&lt;img&gt;</code>或<code>&lt;canvas&gt;</code>元素</h4>
-
-<div class="highlight"><pre><span class="c1">//在body末尾插入一个&lt;img&gt;</span>
+				<div class="highlight">
+					<pre><span class="c1">//在body末尾插入一个&lt;img&gt;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardImage</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="s1">'hearts'</span><span class="p">,</span><span class="s1">'q'</span><span class="p">));</span>
 <span class="c1">//在body末尾插入一个&lt;canvas&gt;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardCanvas</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="s1">'hearts'</span><span class="p">,</span><span class="s1">'q'</span><span class="p">));</span>
-</pre></div>
+</pre>
+				</div>
+				<h2>方法2，获取base64的png图像数据</h2>
 
-<h2>方法2，获取base64的png图像数据</h2>
+				<h4>调用
+				<code>
+					Poker.getCardData
+				</code>来获取数据</h4>
 
-<h4>调用<code>Poker.getCardData</code>来获取数据</h4>
-
-<div class="highlight"><pre><span class="c1">//获取图像数据并且存储在变量pokerHQ里</span>
+				<div class="highlight">
+					<pre><span class="c1">//获取图像数据并且存储在变量pokerHQ里</span>
 <span class="kd">var</span> <span class="nx">pokerHQ</span> <span class="o">=</span> <span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardData</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="s1">'hearts'</span><span class="p">,</span><span class="s1">'q'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<h2>方法3，在你自己的canvas里画牌</h2>
 
-<h2>方法3，在你自己的canvas里画牌</h2>
+				<h4>在DOM里添加你自己的canvas容器</h4>
 
-<h4>在DOM里添加你自己的canvas容器</h4>
+				<div class="highlight">
+					<pre>&lt;<span class="nt">canvas</span> <span class="na">id=</span><span class="s">"myowncanvas"</span> <span class="na">width=</span><span class="s">"1280"</span> <span class="na">height=</span><span class="s">"720"</span>&gt;&lt;<span class="nt">/canvas</span>&gt;
+</pre>
+				</div>
+				<h4>取得canvas的2d对象，在里面画牌</h4>
 
-<div class="highlight"><pre><span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"myowncanvas"</span> <span class="na">width=</span><span class="s">"1280"</span> <span class="na">height=</span><span class="s">"720"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
-</pre></div>
-
-<h4>取得canvas的2d对象，在里面画牌</h4>
-
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myowncanvas'</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
+				<div class="highlight">
+					<pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myowncanvas'</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerCard</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<hr>
+				<h1>方法和参数</h1>
 
-<hr><h1>方法和参数</h1>
+				<h2>画牌面</h2>
 
-<h2>画牌面</h2>
+				<h4>方法</h4>
 
-<h4>方法</h4>
-
-<div class="highlight"><pre>Poker.getCardImage   (size, suit, point)
+				<div class="highlight">
+					<pre>Poker.getCardImage   (size, suit, point)
 Poker.getCardCanvas  (size, suit, point)
 Poker.getCardData    (size, suit, point)
 canvas.drawPokerCard (x, y, size, suit, point)
-</pre></div>
+</pre>
+				</div>
+				<h4>参数</h4>
 
-<h4>参数</h4>
-
-<div class="highlight"><pre>x, y  - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
+				<div class="highlight">
+					<pre>x, y  - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size  - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
 suit  - 牌面花色。取值大小写不敏感，必须为下列[]内的值之一：
         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
@@ -215,46 +281,55 @@ point - 牌面点数。取值大小写不敏感，必须为下列[]内的值之�
         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
         'O'(字母O)是'JOKER'的缩略写法
         缺省值为'O'
-</pre></div>
+</pre>
+				</div>
+				<h4>例子</h4>
 
-<h4>例子</h4>
-
-<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardCanvas</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">));</span>
+				<div class="highlight">
+					<pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getCardCanvas</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">));</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerCard</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'joker'</span><span class="p">);</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerCard</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'hearts'</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">);</span>
-</pre></div>
+</pre>
+				</div>
+				<h2>画牌背</h2>
 
-<h2>画牌背</h2>
+				<h4>方法</h4>
 
-<h4>方法</h4>
-
-<div class="highlight"><pre>Poker.getBackImage   (size[, foregroundColor, backgroundColor])
+				<div class="highlight">
+					<pre>Poker.getBackImage   (size[, foregroundColor, backgroundColor])
 Poker.getBackCanvas  (size[, foregroundColor, backgroundColor])
 Poker.getBackData    (size[, foregroundColor, backgroundColor])
 canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor]])
-</pre></div>
+</pre>
+				</div>
+				<h4>参数</h4>
 
-<h4>参数</h4>
-
-<div class="highlight"><pre>x, y            - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
+				<div class="highlight">
+					<pre>x, y            - 牌的左上角在Canvas里的坐标。缺省值为0, 0。
 size            - 牌的象素高度。牌的宽高比固定为3:4。缺省值为200。
 foregroundColor - 前景色。缺省值为'#BB5555'。
 backgroundColor - 背景色。缺省值为'#AA2222'。
-</pre></div>
+</pre>
+				</div>
+				<h4>例子</h4>
 
-<h4>例子</h4>
-
-<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getBackCanvas</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="s1">'#7A7BB8'</span><span class="p">,</span> <span class="s1">'#2E319C'</span><span class="p">));</span>
+				<div class="highlight">
+					<pre><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">Poker</span><span class="p">.</span><span class="nx">getBackCanvas</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="s1">'#7A7BB8'</span><span class="p">,</span> <span class="s1">'#2E319C'</span><span class="p">));</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerBack</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'#b55'</span><span class="p">,</span> <span class="s1">'#a22'</span><span class="p">)</span>
 <span class="nx">canvas</span><span class="p">.</span><span class="nx">drawPokerBack</span> <span class="p">(</span><span class="mi">375</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'#7A7BB8'</span><span class="p">,</span> <span class="s1">'#2E319C'</span><span class="p">);</span>
-</pre></div>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/Tairraos">Tairraos</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+</pre>
+				</div>
+			</section>
+			<footer>
+				<p>
+					Project maintained by <a href="https://github.com/Tairraos">Tairraos</a>
+				</p>
+				<p>
+					<small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small>
+				</p>
+			</footer>
+		</div>
+		<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+	</body>
 </html>
