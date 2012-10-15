@@ -134,6 +134,9 @@
 			<button id="btnRunCode">
 				Run Code
 			</button>
+			<button id="btnClearContainer">
+				Clear
+			</button>
 		</div>
 		<div class="container">
 			<div class="title">
@@ -146,7 +149,7 @@
 				Canvas container, click title to toggle expand or collapse
 			</div>
 			<div class="content" id="drawContainer">
-				<canvas width="800" height="400"></canvas>
+				<canvas width="800" height="500"></canvas>
 			</div>
 		</div>
 		<div class="container">
@@ -168,9 +171,6 @@
 				point : $('#selPoint').val(),
 				forecolor : $('#selForeColor').val(),
 				backcolor : $('#selBackColor').val(),
-				domContainer : 0,
-				drawContainer : 0,
-				dataContainer : 0,
 				canvas : $('#drawContainer canvas').get(0).getContext('2d'),
 				zindex : 100
 
@@ -202,33 +202,35 @@
 				$('#btnRunCode').bind('click', function() {
 					if (vars.container === 'i' || vars.container === 'c') {
 						eval('window.domTemp=' + $('#code').val());
-						vars.domContainer = 1;
-						$('#domContainer').append($(window.domTemp)).parent().css('height', '460px');
-						$('#drawContainer').parent().css('height', '22px');
-						$('#dataContainer').parent().css('height', '22px');
-						(vars.type === 'b') ? rndColor() : rndCard();
+						$('#domContainer').append($(window.domTemp));
+						resizeContanier([1, 0, 0]);
 					} else if (vars.container === 'd') {
 						eval('vars.' + $('#code').val());
-						vars.drawContainer = 1;
-						$('#drawContainer').parent().css('height', '460px');
-						$('#domContainer').parent().css('height', '22px');
-						$('#dataContainer').parent().css('height', '22px');
-						(vars.type === 'b') ? rndColor() : rndCard();
+						resizeContanier([0, 1, 0]);
 					} else {
 						eval('window.domTemp=' + $('#code').val());
-						vars.dataContainer = 1;
-						$('#dataContainer').html(window.domTemp).parent().css('height', '460px');
-						$('#drawContainer').parent().css('height', '22px');
-						$('#domContainer').parent().css('height', '22px');
-						(vars.type === 'b') ? rndColor() : rndCard();
+						$('#dataContainer').html(window.domTemp);
+						resizeContanier([0, 0, 1]);
 					}
+					(vars.type === 'b') ? rndColor() : rndCard();
 				});
-
+				
+				$('#btnClearContainer').bind('click', function() {
+					$('#domContainer').empty();
+					$('#dataContainer').empty();
+					vars.canvas.clearRect(0, 0, 800, 500);
+				});
 				$('.title').bind('click', function() {
 					$(this).parent().css('height', (vars[$(this).next().attr('id')] ^=1) ? '460px' : '22px');
 				});
 
 				rndColor();
+			}
+
+			function resizeContanier(status) {
+				$('.container').each(function(index) {
+					$(this).css('height', (status[index]) ? '460px' : '22px');
+				})
 			}
 
 			function hslColor(H, S, L) {
@@ -258,12 +260,12 @@
 				if (vars.type === 'b') {
 					$('.cardContainer').hide();
 					$('.backContainer').show();
-					command += (vars.container === 'i') ? 'window.Poker.getBackImage(' : (vars.container === 'c') ? 'window.Poker.getBackCanvas(' : (vars.container === 'p') ? 'window.Poker.getBackData(' : ('canvas.drawPokerBack(' + (Math.random() * (800 - vars.size * 0.75) | 0) + ',' + (Math.random() * (400 - vars.size) | 0) + ',');
+					command += (vars.container === 'i') ? 'window.Poker.getBackImage(' : (vars.container === 'c') ? 'window.Poker.getBackCanvas(' : (vars.container === 'p') ? 'window.Poker.getBackData(' : ('canvas.drawPokerBack(' + (Math.random() * (800 - vars.size * 0.75) | 0) + ',' + (Math.random() * (500 - vars.size) | 0) + ',');
 					command += vars.size + ',\'' + vars.forecolor + '\',\'' + vars.backcolor + '\');';
 				} else {
 					$('.cardContainer').show();
 					$('.backContainer').hide();
-					command += (vars.container === 'i') ? 'window.Poker.getCardImage(' : (vars.container === 'c') ? 'window.Poker.getCardCanvas(' : (vars.container === 'p') ? 'window.Poker.getCardData(' : ('canvas.drawPokerCard(' + (Math.random() * (800 - vars.size * 0.75) | 0) + ',' + (Math.random() * (400 - vars.size) | 0) + ',');
+					command += (vars.container === 'i') ? 'window.Poker.getCardImage(' : (vars.container === 'c') ? 'window.Poker.getCardCanvas(' : (vars.container === 'p') ? 'window.Poker.getCardData(' : ('canvas.drawPokerCard(' + (Math.random() * (800 - vars.size * 0.75) | 0) + ',' + (Math.random() * (500 - vars.size) | 0) + ',');
 					command += vars.size + ',\'' + vars.suit + '\',\'' + vars.point + '\');';
 				}
 				return command;
