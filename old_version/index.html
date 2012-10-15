@@ -1,0 +1,59 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head><meta charset=utf-8 />
+<title>xiaole's page</title>
+<script>
+var cs, ct, si=new Image(), ci=new Image(), cards={};
+//si - sprite image, ci - canvas image, cs - canvas source, ct - canvas target(Game stage)
+cards.map={'ha':0,'h2':1,'h3':2,'h4':3,'h5':4,'h6':5,'h7':6,'h8':7,'h9':8,'h10':9,'hj':10,'hq':11,'hk':12,'da':13,'d2':14,'d3':15,'d4':16,'d5':17,'d6':18,'d7':19,'d8':20,'d9':21,'d10':22,'dj':23,'dq':24,'dk':25,'sa':26,'s2':27,'s3':28,'s4':29,'s5':30,'s6':31,'s7':32,'s8':33,'s9':34,'s10':35,'sj':36,'sq':37,'sk':38,'ca':39,'c2':40,'c3':41,'c4':42,'c5':43,'c6':44,'c7':45,'c8':46,'c9':47,'c10':48,'cj':49,'cq':50,'ck':51,'rj':52,'bj':53,'bk':54};
+
+window.onload = function() {
+	try { document.createElement("canvas").getContext("2d"); }
+	catch (e) { document.getElementsByTagName("body")[0].innerHTML="该浏览器不支持Canvas"; return false; } 
+
+	cs = document.getElementById('cs').getContext('2d');
+	ct = document.getElementById('ct').getContext('2d');
+	si.src = 'cardsprite.gif';
+	si.onload = function(){
+		for (var i=0;i<13;i++){
+			for (var j=0;j<5;j++){
+				(j<4 || i<4) && cs.drawImage(si,136,42,59,80,i*59,j*80,59,80);
+				(j<4) && cs.drawImage(si,i*15,parseInt(j/2)*21,15,21,i*59+5,j*80+7,15,21);
+				(j<4) && cs.drawImage(si,18+j*14,125,14,17,i*59+5,j*80+32,14,17);
+				(j<4 && i<10) && cs.drawImage(si,j*34,42,34,40,i*59+19,j*80+36,34,40);
+				(j<4 && i>9) && cs.drawImage(si,195+(i-10)*51,parseInt(j/2)*65,51,65,i*59+4,j*80+11,51,65);
+			}
+		}
+		cs.drawImage(si,0,82,9,58,0*59+8,320+8,9,58);
+		cs.drawImage(si,18,82,29,43,0*59+21,320+31,29,43);
+		cs.drawImage(si,9,82,9,58,1*59+8,320+8,9,58);
+		cs.drawImage(si,47,82,29,43,1*59+21,320+31,29,43);
+		cs.drawImage(si,76,82,51,72,2*59+4,320+4,51,72);
+		ci=document.getElementById('cs');
+
+		CanvasRenderingContext2D.prototype.drawCard=function(cardName,x,y) {
+			var cardNum=cards.map[cardName.toLocaleLowerCase()],x=x||0,y=y||0;
+			(cardNum>=0)?this.drawImage(ci,cardNum%13*59,parseInt(cardNum/13)*80,59,80,x,y,59,80):this.drawImage(ci,177,320,59,80,x,y,59,80);
+		}
+	}
+}
+
+function drawCard() {
+	(!window.cp) && (window.cp={x:0,y:0});
+	ct.drawCard(document.getElementById('cardName').value,window.cp.x,window.cp.y);
+	document.getElementById('command').innerHTML='JS代码: ct.drawCard(\''+document.getElementById('cardName').value+'\','+window.cp.x+','+window.cp.y+');';
+	((window.cp.x+=60)>750) && (window.cp={x:0,y:window.cp.y+80});
+	document.getElementById('cardName').value="hdsc".charAt(Math.random()*4|0)+"a23456789jqk".charAt(Math.random()*12|0);
+}
+
+</script>
+</head>
+<body>
+<canvas id="cs" width="767" height="400" style="display:none;"></canvas>
+// 红桃Hearts HA,H1,H2...H10，HJ,HQ,HK, 方块Diamonds DA...DK, 黑桃Spades SA-SK, 梅花Clubs CA-CK<br />
+// 大王Red Joker RJ, 小王Black Jocker BJ, 牌背Back BK<br />
+<a href="view-source:http://xiaole.happylive.org/demo/gen_cards/">查看源代码</a>
+<input type="text" id="cardName" value="rj"><input type="button" value="画出来" onclick="drawCard();">
+<span id="command"></span><br />
+<canvas id="ct" width="800" height="800"></canvas>
+</body>
+</html>
