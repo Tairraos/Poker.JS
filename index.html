@@ -6,7 +6,6 @@
 		<title>Poker.js by Tairraos</title>
 		<link rel="stylesheet" href="stylesheets/styles.css">
 		<link rel="stylesheet" href="stylesheets/pygment_trac.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script src="javascripts/main.js"></script>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,19 +23,17 @@
 		</header>
 
 		<div id="banner">
-			<span id="logo"></span>
+			<div class="content">
+				<div class="fork">
+					<a href="https://github.com/Tairraos/Poker.JS" class="button">View On GitHub</a>
+					<span id="logo">GIT HUB</span>
+				</div>
+				<div class="downloads">
+					<span>Downloads:</span>
+					<a href="https://github.com/Tairraos/Poker.JS/zipball/master" class="button">ZIP</a>
+					<a href="https://github.com/Tairraos/Poker.JS/tarball/master" class="button">TAR</a>
+				</div>
 
-			<a href="https://github.com/Tairraos/Poker.JS" class="button fork"><strong>View On GitHub</strong></a>
-			<div class="downloads">
-				<span>Downloads:</span>
-				<ul>
-					<li>
-						<a href="https://github.com/Tairraos/Poker.JS/zipball/master" class="button">ZIP</a>
-					</li>
-					<li>
-						<a href="https://github.com/Tairraos/Poker.JS/tarball/master" class="button">TAR</a>
-					</li>
-				</ul>
 			</div>
 		</div>
 
@@ -47,6 +44,11 @@
 				<p>
 					<a href="#chinese-version-readme">Chinese version readme 中文版本读我文档</a>
 				</p>
+				<div class="demo">
+					<span>Demo:</span>
+					<a href="https://github.com/Tairraos/Poker.JS" class="button">Demo1</a>
+					<a href="https://github.com/Tairraos/Poker.JS" class="button">Demo2</a>
+				</div>
 
 				<h1>Usage</h1>
 
@@ -123,8 +125,10 @@ canvas.drawPokerCard (x, y, size, suit, point)
 				<h4>Parameters</h4>
 
 				<div class="highlight">
-					<pre>x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
+					<pre>x, y  - The x, y coordinate of top left corner of card in canvas. 
+        Default value is 0, 0.
+size  - Height pixel of card. The ratio of card width and height is fixed to 3:4.
+        Default value is 200.
 suit  - Poker suit. Value is case insensitive and should be one of below: 
         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
         'h', 'd', 's', 'c' are abbreviation
@@ -158,8 +162,10 @@ canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
 				<h4>Parameters</h4>
 
 				<div class="highlight">
-					<pre>x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
+					<pre>x, y            - The x, y coordinate of top left corner of card in canvas. 
+                  Default value is 0, 0.
+size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
+                  Default value is 200.
 foregroundColor - Foreground color. Default value is '#BB5555'.
 backgroundColor - Background color. Default value is '#AA2222'.
 </pre>

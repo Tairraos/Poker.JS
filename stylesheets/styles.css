@@ -63,13 +63,6 @@ audio, canvas, video {
 }
 
 /*
- * Prevents modern browsers from displaying 'audio' without controls
- */
-audio:not([controls]) {
-	display: none;
-}
-
-/*
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
  * Known issue: no IE6 support
  */
@@ -209,7 +202,7 @@ p, pre {
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
 pre, code, kbd, samp {
-	font-family: monospace, serif;
+	font-family: consolas, monospace, serif;
 	_font-family: 'courier new', monospace;
 	font-size: 1em;
 }
@@ -294,13 +287,6 @@ img {
 	/* 1 */
 	-ms-interpolation-mode: bicubic;
 	/* 2 */
-}
-
-/*
- * Corrects overflow displayed oddly in IE9
- */
-svg:not(:root) {
-	overflow: hidden;
 }
 
 /* =============================================================================
@@ -524,9 +510,8 @@ strong {
 }
 
 .wrapper {
-	width: 650px;
+	width: 800px;
 	margin: 0 auto;
-	position: relative;
 }
 
 section img {
@@ -569,6 +554,7 @@ pre {
 	overflow: auto;
 	overflow-y: hidden;
 }
+
 pre code {
 	margin: 0px;
 	padding: 0px;
@@ -612,10 +598,6 @@ dt {
 header {
 	padding: 25px 20px 40px 20px;
 	margin: 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
 	width: 100%;
 	text-align: center;
 	background: url(../images/background.png) #4276b6;
@@ -623,10 +605,10 @@ header {
 	-webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
 	-o-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
 	box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-	z-index: 99;
 	-webkit-font-smoothing: antialiased;
 	min-height: 76px;
 }
+
 header h1 {
 	font: 40px/48px "Copse", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #f3f3f3;
@@ -646,28 +628,16 @@ header p {
 }
 
 #banner {
-	z-index: 100;
-	left: 0;
-	right: 50%;
 	height: 50px;
-	margin-right: -382px;
-	position: fixed;
-	top: 115px;
 	background: #ffcc00;
 	border: 1px solid #f0b500;
 	-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 	-o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-	-moz-border-radius: 0px 2px 2px 0px;
-	-webkit-border-radius: 0px 2px 2px 0px;
-	-o-border-radius: 0px 2px 2px 0px;
-	-ms-border-radius: 0px 2px 2px 0px;
-	-khtml-border-radius: 0px 2px 2px 0px;
-	border-radius: 0px 2px 2px 0px;
-	padding-right: 10px;
 }
-#banner .button {
+
+.button {
 	border: 1px solid #dba500;
 	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffce38));
 	background: -webkit-linear-gradient(#ffe788, #ffce38);
@@ -696,7 +666,7 @@ header p {
 	display: inline-block;
 	text-align: center;
 }
-#banner .button:hover {
+.button:hover {
 	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffe788));
 	background: -webkit-linear-gradient(#ffe788, #ffe788);
 	background: -moz-linear-gradient(#ffe788, #ffe788);
@@ -705,57 +675,42 @@ header p {
 	background: linear-gradient(#ffe788, #ffe788);
 	background-color: #ffeca0;
 }
+#banner .content {
+	margin: auto;
+	width: 800px;
+}
+
 #banner .fork {
-	position: fixed;
-	left: 50%;
-	margin-left: -325px;
-	padding: 10px 12px;
-	margin-top: 6px;
-	line-height: 14px;
-	font-size: 14px;
-	background-color: #FFE788;
+	display: inline-block;
+}
+#banner .demo {
+	display: inline-block;
+	margin: 0 20px 0 180px;
 }
 #banner .downloads {
-	float: right;
-	margin: 0 45px 0 0;
+	display: inline-block;
+    float: right;
+    margin: 0 10px;
 }
-#banner .downloads span {
-	float: left;
-	line-height: 52px;
+#banner .downloads span, .demo span {
 	font-size: 90%;
 	color: #9d7f0d;
 	text-transform: uppercase;
 	text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
 }
-#banner ul {
-	list-style: none;
-	height: 40px;
-	padding: 0;
-	float: left;
-	margin-left: 10px;
-}
-#banner ul li {
-	display: inline;
-}
-#banner ul li a.button {
-	background-color: #FFE788;
-}
+
 #banner #logo {
-	position: absolute;
 	height: 36px;
 	width: 36px;
-	right: 7px;
-	top: 7px;
-	display: block;
+	display: inline-block;
 	background: url(../images/octocat-logo.png);
+	text-indent: -9999px;
+	line-height: 36px;
 }
 
 section {
-	width: 590px;
 	padding: 30px 30px 50px 30px;
 	margin: 20px 0;
-	margin-top: 190px;
-	position: relative;
 	background: #fbfbfb;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -776,10 +731,5 @@ small {
 
 footer {
 	width: 180px;
-	position: fixed;
-	left: 50%;
-	margin-left: -530px;
-	bottom: 20px;
-	text-align: right;
 	line-height: 16px;
 }
