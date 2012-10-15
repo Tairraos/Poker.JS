@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+	<head>
+		<meta charset=utf-8 />
+		<title>Poker.JS demo</title>
+		<style>
+			div, select, option, input, button {
+				font: 15px 'Microsoft Yahei', Verdana;
+			}
+			div {
+				margin: 8px 0;
+			}
+			select, input {
+				margin: 0 15px 0 0;
+				border: 1px solid #ccc;
+				height: 24px;
+				display: inline-block;
+			}
+			input {
+				width: 80px;
+			}
+			#code {
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				background: #ffd;
+				font: bold 14px consolas;
+				padding: 0 4px;
+				width: 500px;
+			}
+			.container {
+				border: 1px solid #ccc;
+				border-radius: 7px;
+				padding: 2px 4px;
+				background: #ffd;
+				-webkit-transition-property: height;
+				-webkit-transition-duration: 0.8s;
+				-moz-transition-property: height;
+				-moz-transition-duration: 0.8s;
+				height: 22px;
+				overflow: hidden;
+			}
+			.container .title {
+				background: #ccc;
+				border: 1px solid #ccc;
+				border-radius: 7px;
+				margin: 0;
+				padding: 0 10px;
+				height: 20px;
+			}
+			.container .content {
+				overflow: auto;
+				padding: 10px 25px;
+				height: 400px;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="controller">
+			<span>容器:
+				<select id="selContainer">
+					<option value="i">创建 &lt;img&gt;</option>
+					<option value="c" selected="selected">创建 &lt;canvas&gt;</option>
+					<option value="d">在 canvas 里绘画</option>
+					<option value="p">PNG Image Data</option>
+				</select></span>
+			<span>类型:
+				<select id="selType">
+					<option value="f" selected="selected">牌面</option>
+					<option value="b">牌背</option>
+				</select></span>
+
+			<span>尺寸:
+				<select id="selSize">
+					<option>40</option>
+					<option>52</option>
+					<option>60</option>
+					<option>72</option>
+					<option>80</option>
+					<option>92</option>
+					<option>100</option>
+					<option selected="selected">120</option>
+					<option>152</option>
+					<option>200</option>
+					<option>252</option>
+					<option>300</option>
+					<option>400</option>
+					<option>500</option>
+				</select></span>
+			<span class="cardContainer">花样:
+				<select id="selSuit">
+					<option value="h" selected="selected">&hearts; 红桃</option>
+					<option value="d">&diams; 方块</option>
+					<option value="s">&spades; 黑桃</option>
+					<option value="c">&clubs; 梅花</option>
+				</select></span>
+			<span class="cardContainer">点数:
+				<select id="selPoint">
+					<option selected="selected">A</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>J</option>
+					<option>Q</option>
+					<option>K</option>
+					<option>JOKER</option>
+				</select></span>
+			<span class="cardContainer">
+				<button id="btnRndCard">
+					随机牌
+				</button></span>
+
+			<span class="backContainer">前景:
+				<input type="text" id="txtForeColor" />
+			</span>
+			<span class="backContainer">背景:
+				<input type="text" id="txtBackColor" />
+			</span>
+			<span class="backContainer">
+				<button id="btnRndColor">
+					随机颜色
+				</button></span>
+
+		</div>
+		<div id="command">
+			<span>代码:</span>
+			<input type="text" id='code' value="code here." />
+			<button id="btnRunCode">
+				执行代码
+			</button>
+			<button id="btnClearContainer">
+				清空画布
+			</button>
+		</div>
+		<div class="container">
+			<div class="title">
+				Dom 容器，点击标题展开或收缩，点击牌应用随机CSS旋转。IE 不支持
+			</div>
+			<div class="content" id="domContainer"></div>
+		</div>
+		<div class="container">
+			<div class="title">
+				Canvas 容器 ，点击标题展开或收缩
+			</div>
+			<div class="content" id="drawContainer">
+				<canvas width="800" height="400"></canvas>
+			</div>
+		</div>
+		<div class="container">
+			<div class="title">
+				PNG image data 容器，点击标题展开或收缩
+			</div>
+			<div class="content" id="dataContainer"></div>
+		</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="poker.min.js"></script>
+	<script>
+		(function() {
+			var vars = {
+				container : $('#selContainer').val(),
+				type : $('#selType').val(),
+				size : $('#selSize').val(),
+				suit : $('#selSuit').val(),
+				point : $('#selPoint').val(),
+				forecolor : $('#selForeColor').val(),
+				backcolor : $('#selBackColor').val(),
+				canvas : $('#drawContainer canvas').get(0).getContext('2d'),
+				zindex : 100
+
+			}
+			if (window.Poker) {
+				$('select').bind('change', function() {
+					vars[$(this).attr('id').replace(/^sel/, '').toLowerCase()] = $(this).val();
+					$('#code').val(genCode());
+				});
+				$('.backContainer input').bind('keyup', function() {
+					vars[$(this).attr('id').replace(/^txt/, '').toLowerCase()] = $(this).val();
+					$(this).css('background', $(this).val());
+					$('#code').val(genCode());
+				});
+				$('#btnRndColor').bind('click', function() {
+					rndColor();
+				});
+				$('#btnRndCard').bind('click', function() {
+					rndCard();
+				});
+				$('#domContainer img,#domContainer canvas').live('click', function() {
+					$(this).css({
+						'-moz-transform' : 'rotate(' + (Math.random() * 60 - 30 | 0) + 'deg)',
+						'-webkit-transform' : 'rotate(' + (Math.random() * 60 - 30 | 0) + 'deg)',
+						'z-index' : vars.zindex++
+					});
+				})
+
+				$('#btnRunCode').bind('click', function() {
+					if (vars.container === 'i' || vars.container === 'c') {
+						eval('window.domTemp=' + $('#code').val());
+						$('#domContainer').append($(window.domTemp));
+						resizeContanier([1, 0, 0]);
+					} else if (vars.container === 'd') {
+						eval('vars.' + $('#code').val());
+						resizeContanier([0, 1, 0]);
+					} else {
+						eval('window.domTemp=' + $('#code').val());
+						$('#dataContainer').html(window.domTemp);
+						resizeContanier([0, 0, 1]);
+					}
+					(vars.type === 'b') ? rndColor() : rndCard();
+				});
+
+				$('#btnClearContainer').bind('click', function() {
+					$('#domContainer').empty();
+					$('#dataContainer').empty();
+					vars.canvas.clearRect(0, 0, 800, 500);
+				});
+				$('.title').bind('click', function() {
+					$(this).parent().css('height', (vars[$(this).next().attr('id')] ^=1) ? '460px' : '22px');
+				});
+
+				rndColor();
+			}
+
+			function resizeContanier(status) {
+				$('.container').each(function(index) {
+					$(this).css('height', (status[index]) ? '460px' : '22px');
+				})
+			}
+
+			function hslColor(H, S, L) {
+				var C = (1 - Math.abs((2 * L) - 1)) * S, H_ = H * 6, H = H * 360, X = C * (1 - Math.abs((H_ % 2) - 1)), m = L - (C / 2), R, G, B;
+				(H_ >= 0 && H_ < 1) ? ( R = C, G = X, B = 0) : (H_ >= 1 && H_ < 2) ? ( R = X, G = C, B = 0) : (H_ >= 2 && H_ < 3) ? ( R = 0, G = C, B = X) : (H_ >= 3 && H_ < 4) ? ( R = 0, G = X, B = C) : (H_ >= 4 && H_ < 5) ? ( R = X, G = 0, B = C) : ( R = C, G = 0, B = X);
+				return ('#' + ('0' + ((R + m) * 255 | 0).toString(16)).substr(-2) + ('0' + ((G + m) * 255 | 0).toString(16)).substr(-2) + ('0' + ((B + m) * 255 | 0).toString(16)).substr(-2)).toUpperCase();
+			}
+
+			function rndColor() {
+				var H = Math.random(), S = Math.random(), L = Math.random(), FC, BC;
+				(L < 0.8) ? ( FC = hslColor(H, S, L + 0.2), BC = hslColor(H, S, L)) : ( FC = hslColor(H, S, L), BC = hslColor(H, S, L - 0.2));
+				vars.forecolor = $('#txtForeColor').css('background', FC).val(FC).val();
+				vars.backcolor = $('#txtBackColor').css('background', BC).val(BC).val();
+				$('#code').val(genCode());
+			}
+
+			function rndCard() {
+				var size = [40, 52, 60, 72, 80, 92, 100, 120, 152, 200, 252, 300, 400, 500], suit = ['h', 'd', 's', 'c'], point = ['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'JOKER'];
+				vars.size = $('#selSize').val(size[Math.random() * 14 | 0]).val();
+				vars.suit = $('#selSuit').val(suit[Math.random() * 4 | 0]).val();
+				vars.point = $('#selPoint').val( aa = point[Math.random() * 14 | 0]).val();
+				$('#code').val(genCode());
+			}
+
+			function genCode() {
+				var command = '';
+				if (vars.type === 'b') {
+					$('.cardContainer').hide();
+					$('.backContainer').show();
+					command += (vars.container === 'i') ? 'window.Poker.getBackImage(' : (vars.container === 'c') ? 'window.Poker.getBackCanvas(' : (vars.container === 'p') ? 'window.Poker.getBackData(' : ('canvas.drawPokerBack(' + (Math.random() * (800 - vars.size * 0.75) | 0) + ',' + (Math.random() * (500 - vars.size) | 0) + ',');
+					command += vars.size + ',\'' + vars.forecolor + '\',\'' + vars.backcolor + '\');';
+				} else {
+					$('.cardContainer').show();
+					$('.backContainer').hide();
+					command += (vars.container === 'i') ? 'window.Poker.getCardImage(' : (vars.container === 'c') ? 'window.Poker.getCardCanvas(' : (vars.container === 'p') ? 'window.Poker.getCardData(' : ('canvas.drawPokerCard(' + (Math.random() * (800 - vars.size * 0.75) | 0) + ',' + (Math.random() * (500 - vars.size) | 0) + ',');
+					command += vars.size + ',\'' + vars.suit + '\',\'' + vars.point + '\');';
+				}
+				return command;
+			};
+		})();
+	</script>
+</html>
