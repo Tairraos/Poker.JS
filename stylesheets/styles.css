@@ -596,7 +596,7 @@ dt {
 }
 
 header {
-	padding: 25px 20px 40px 20px;
+	padding: 25px 20px 25px;
 	margin: 0;
 	width: 100%;
 	text-align: center;
@@ -706,6 +706,7 @@ header p {
 	background: url(../images/octocat-logo.png);
 	text-indent: -9999px;
 	line-height: 36px;
+	margin: 0 0 0 10px;
 }
 
 section {
@@ -730,6 +731,33 @@ small {
 }
 
 footer {
-	width: 180px;
+	width: 800px;
 	line-height: 16px;
+}
+
+footer .avatar {
+    background: url("../images/avatar.jpg") repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 10px;
+    text-indent: -9999px;
+    width: 48px;
+}
+
+footer .copyright{
+    margin: 10px 0 0;
+    padding: 18px 0 0;
+}
+
+.splitline{
+    background: url("../images/hr.gif") repeat-x scroll center center transparent;
+    padding: 30px;
+    text-align: center;
+}
+.splitline span{
+    background: none repeat scroll 0 0 white;
+    color: #990000;
+    padding: 0 10px;
 }
