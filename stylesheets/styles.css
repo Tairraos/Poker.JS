@@ -598,7 +598,6 @@ dt {
 header {
 	padding: 25px 20px 25px;
 	margin: 0;
-	width: 100%;
 	text-align: center;
 	background: url(../images/background.png) #4276b6;
 	-moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
@@ -710,7 +709,7 @@ header p {
 }
 
 section {
-	padding: 30px 30px 50px 30px;
+	padding: 30px 30px 50px;
 	margin: 20px 0;
 	background: #fbfbfb;
 	-moz-border-radius: 3px;
@@ -718,7 +717,7 @@ section {
 	-o-border-radius: 3px;
 	-ms-border-radius: 3px;
 	-khtml-border-radius: 3px;
-	border-radius: 3px;
+	border-radius: 5px;
 	border: 1px solid #cbcbcb;
 	-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
 	-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
@@ -746,6 +745,12 @@ footer .avatar {
     width: 48px;
 }
 
+footer .license{
+    float:right;
+    display: inline-block;
+    padding: 34px 10px 0 0;
+}
+
 footer .copyright{
     margin: 10px 0 0;
     padding: 18px 0 0;
@@ -761,3 +766,4 @@ footer .copyright{
     color: #990000;
     padding: 0 10px;
 }
+
