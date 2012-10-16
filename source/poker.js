@@ -4,7 +4,7 @@
  * poker.js
  * Project on https://github.com/Tairraos/Poker.JS
  * Created by Xiaole Tao (http://xiaole.happylive.org)
- * Last update - 2012/10/13.
+ * Last update - 2012/10/17.
  */
 (function() {
 	if (window.CanvasRenderingContext2D) {
@@ -109,7 +109,7 @@
 					this.fillPokerSymbol(ax(15), ay(15), as(50), point);
 				} else {
 					this.fillPokerSymbol(ax(11), ay(10), as(22), 'o');
-					if (suit === 'hearts' || suit === 'd') {
+					if (suit === 'h' || suit === 'd') {
 						this.drawPokerCrown(ax(45), ay(73), as(89), '#b55', '#a22');
 						this.drawPokerCrown(ax(47), ay(75), as(85), '#fdf98b', '#e7bd4f', '#a22');
 					} else {
@@ -139,7 +139,7 @@
 
 			this.drawEmptyCard(x, y, size);
 
-			this.fillStyle = foregroundColor;
+			this.fillStyle = backgroundColor;
 			this.fillRoundRect(ax(10), ay(10), as(130), as(180), as(8));
 			this.strokeStyle = foregroundColor;
 			this.strokeRoundRect(ax(18), ay(18), as(114), as(164), as(4));
@@ -150,7 +150,7 @@
 			this.fillPokerSymbol(ax(106), ay(24), as(20), 's');
 			this.fillPokerSymbol(ax(44), ay(176), as(-20), 's');
 			this.fillPokerSymbol(ax(126), ay(176), as(-20), 's');
-			this.fillStyle = foregroundColor;
+			this.fillStyle = backgroundColor;
 			this.fillRoundRect(ax(50), ay(40), as(50), as(120), as(24));
 			this.fillPokerSymbol(ax(32), ay(54), as(86), 's');
 			this.fillPokerSymbol(ax(30), ay(60), as(16), 's');

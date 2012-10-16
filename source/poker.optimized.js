@@ -4,7 +4,7 @@
  * poker.js
  * Project on https://github.com/Tairraos/Poker.JS
  * Created by Xiaole Tao (http://xiaole.happylive.org)
- * Last update - 2012/10/13.
+ * Last update - 2012/10/17.
  * 
  * This file used some tricks and reduce readability, but minified file small and quickly.
  *
@@ -117,7 +117,7 @@
 					X.call(Z, ax(15), ay(15), as(50), point);
 				} else {
 					X.call(Z, ax(11), ay(O), as(22), 'o');
-					if (suit === 'hearts' || suit === 'd') {
+					if (suit === 'h' || suit === 'd') {
 						Y.call(Z, ax(45), ay(73), as(89), C, B);
 						Y.call(Z, ax(47), ay(75), as(85), D, E, B);
 					} else {
