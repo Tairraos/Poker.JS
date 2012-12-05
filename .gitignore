@@ -1,0 +1,11 @@
+.git
+.project
+.idea
+.svn
+.cvs
+*.zip
+*.rar
+*.tgz
+*.gz
+*.bak
+*.tmp
