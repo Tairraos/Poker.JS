@@ -121,7 +121,7 @@ size    - The pixel size of the curve.
 svgPath - Value of property 'd' of SVG 'path' method.
           If create the curve via software, set the coordinate origin to 0,0.
           And keep the bigger size of height and width to 200px.
-          Don't use AQ or T methon in svg software, JS have not relative methon.
+          Don't use AQ or T method in svg software, JS have not relative method.
 ```
 ```js
 //Example, draw a heart symbol:

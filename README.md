@@ -39,7 +39,7 @@ canvas.drawPokerCard(10, 10, 120, 'hearts', '6');
 ```
 
 *********************************************
-# Methon and parameters
+# Method and parameters
 
 ## Draw card number side
 
