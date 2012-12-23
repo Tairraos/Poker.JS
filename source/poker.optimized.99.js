@@ -1,22 +1,18 @@
 /**
- * MIT license source code.
- *
- * poker.js
+ * Poker.JS
  * Project on https://github.com/Tairraos/Poker.JS
- * Created by Xiaole Tao (http://xiaole.happylive.org)
- * Last update - 2012/10/17.
- *
  * File for 99 point project only.
  * This file used some tricks and reduce readability, but minified file small and quickly.
  *
+ * @author Xiaole Tao (http://xiaole.happylive.org)
+ * @license MIT license source code.
+ * @version 1.0
  */
 (function() {
 	if (window.CanvasRenderingContext2D) {
-		// @formatter:off
-		var A = '#000', B = '#a22', C = '#b55', D = '#fdf98b', E = '#e7bd4f', 
+		var A = '#000', B = '#a22', C = '#b55', D = '#fdf98b', E = '#e7bd4f',
 		    H = 200, I = 150, J = 155, K = 16, L = 93, M = 24, N = 40, O = 10, P = 13, 
 		    R = document, S = CanvasRenderingContext2D.prototype, T = Math.PI,
-        // @formatter:on
 		symbolPath = {
 			'a' : 'M6,200V183H23L58,0H78L117,183H131V200H85V183H97L92,156H46L42,183H54V200H6zM88,135L68,37L49,135H88z',
 			'2' : 'M10,200L11,187C15,149,23,136,70,97C93,78,100,68,101,57C104,31,81,23,65,23C46,22,23,34,35,62L12,68C8,43,12,18,33,8C61,-6,96,-1,115,21C127,36,129,56,123,72C104,113,39,131,35,179H105V152H127V200L10,200z',
@@ -42,10 +38,10 @@
 			's' : 'M200,120C200,168,144,176,116,156C116,180,116,188,128,200C112,196,88,196,72,200C84,188,84,180,84,156C56,176,0,168,0,120C0,72,60,36,100,0C140,36,200,72,200,120z',
 			//Clubs
 			'c' : 'M80,200C92,184,92,160,92,136C76,180,0,176,0,124C0,80,40,76,68,88C80,92,80,88,72,84C44,64,40,0,100,0C160,0,156,64,128,84C120,88,120,92,132,88C160,76,200,80,200,124C200,176,124,180,108,136C108,160,108,184,120,200C100,196,100,196,80,200z',
-			//Nine only for 99
-			'n' : 'M157,89C159,188,80,211,16,196L23,160C62,172,100,167,107,119C93,127,83,133,62,132C28,133,0,113,0,70C0,25,37,0,78,0C137,0,157,41,157,89M105,56C100,42,92,34,77,33C59,33,49,49,49,69C52,101,83,104,107,95C107,82,108,66,105,56z',
 			//cRown,cr
-			'r' : 'M44,60,C45,56,-3,33,0,70,C2,107,39,146,48,150,C57,154,12,107,12,77,C12,45,43,65,44,60,M37,65,C31,64,20,60,19,81,C19,100,63,158,65,149,C65,139,33,102,37,65,M86,56,C87,52,38,28,40,66,C43,103,69,141,78,148,C86,155,54,102,54,71,C54,39,86,60,86,56,M82,65,C77,64,59,54,59,74,C60,95,82,146,84,138,C86,132,78,102,82,65,M154,60,C153,56,203,33,200,70,C197,107,159,146,151,150,C142,154,187,107,187,77,C187,45,155,65,154,60,M161,65,C167,64,179,60,180,81,C181,100,137,158,135,149,C134,139,165,102,161,65,M113,56,C112,52,161,28,158,66,C155,103,130,141,122,148,C114,155,145,102,145,71,C145,39,114,60,113,56,M117,65,C123,64,141,54,141,74,C140,95,118,146,116,138,C114,132,121,102,117,65z'
+			'r' : 'M44,60,C45,56,-3,33,0,70,C2,107,39,146,48,150,C57,154,12,107,12,77,C12,45,43,65,44,60,M37,65,C31,64,20,60,19,81,C19,100,63,158,65,149,C65,139,33,102,37,65,M86,56,C87,52,38,28,40,66,C43,103,69,141,78,148,C86,155,54,102,54,71,C54,39,86,60,86,56,M82,65,C77,64,59,54,59,74,C60,95,82,146,84,138,C86,132,78,102,82,65,M154,60,C153,56,203,33,200,70,C197,107,159,146,151,150,C142,154,187,107,187,77,C187,45,155,65,154,60,M161,65,C167,64,179,60,180,81,C181,100,137,158,135,149,C134,139,165,102,161,65,M113,56,C112,52,161,28,158,66,C155,103,130,141,122,148,C114,155,145,102,145,71,C145,39,114,60,113,56,M117,65,C123,64,141,54,141,74,C140,95,118,146,116,138,C114,132,121,102,117,65z',
+			//Nine only for 99
+			'n' : 'M157,89C159,188,80,211,16,196L23,160C62,172,100,167,107,119C93,127,83,133,62,132C28,133,0,113,0,70C0,25,37,0,78,0C137,0,157,41,157,89M105,56C100,42,92,34,77,33C59,33,49,49,49,69C52,101,83,104,107,95C107,82,108,66,105,56z'
 		}, ax = function(n) {
 			var args = arguments.callee.caller.arguments;
 			return args[0] + n * args[2] / H;
@@ -67,26 +63,7 @@
 			symbol = (symbol || 'o').toString().toLowerCase();
 			return symbol.substr((symbol.match(/jo|10|cr/)) ? 1 : 0, 1);
 		};
-		/**
-		 * ### Draw card number side
-		 * canvas.drawPokerCard (x, y, size, suit, point)
-		 *
-		 * x, y  - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * suit  - Poker suit. The value is case insensitive and it should be one of these value in []:
-		 *         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
-		 *         'h', 'd', 's', 'c' are abbreviation
-		 *         When card point is 'O', 'h' or 'd' means big joker, 's' or 'c' means little joker.
-		 *         Default value is 'h'.
-		 * point - Card point. The value is case insensitive and it should be one of these value in []:
-		 *         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
-		 *         'O'(letter O) is abbreviation of 'JOKER'
-		 *         Default value is 'O'.
-		 *
-		 * Example:
-		 * canvas.drawPokerCard (0, 400, 100, 'hearts', 'O');
-		 * canvas.drawPokerCard (0, 400, 100, 'hearts', 'Q');
-		 */
+
 		S.drawPokerCard = function(x, y, size, suit, point) {
 			var Z = this, X = Z.fillPokerSymbol, Y = Z.drawPokerCrown;
 			suit = fixSuit(suit);
@@ -129,19 +106,6 @@
 			}
 		};
 
-		/**
-		 * ### Draw card back side
-		 * canvas.drawPokerBack (x, y, size[, foregroundColor, backgroundColor])
-		 *
-		 * x, y            - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * foregroundColor - Foreground color. Default value is '#BB5555'.
-		 * backgroundColor - Background color. Default value is '#AA2222'.
-		 *
-		 * Example:
-		 * canvas.drawPokerBack (10, 10, 300, '#a22', '#b55')
-		 * canvas.drawPokerBack (375, 400, 100, '#2E319C', '#7A7BB8');
-		 */
 		S.drawPokerBack = function(x, y, size, foregroundColor, backgroundColor) {
 			var Z = this, X = Z.fillPokerSymbol, Y = Z.fillRoundRect;
 			foregroundColor = foregroundColor || C;
@@ -169,29 +133,10 @@
 			X.call(Z, ax(104), ay(128), as(K), 's');
 			Z.strokePokerSymbol(ax(31), ay(53), as(88), 's');
 			Z.fillStyle = foregroundColor;
-			///** for 99
 			X.call(Z, ax(47), ay(80), as(35), 'n');
 			X.call(Z, ax(77), ay(80), as(35), 'n');
-			// */
-			// not 99
-			//X.call(Z, ax(50), ay(75), as(50), 'c');
 		};
 
-		/**
-		 * ### Draw round corner rectangle
-		 * canvas.roundRect       (x, y[, width, height[, radius[, direction]]])
-		 * canvas.strokeRoundRect (x, y[, width, height[, radius[, direction]]])
-		 * canvas.fillRoundRect   (x, y[, width, height[, radius[, direction]]])
-		 *
-		 * x, y          - The x, y coordinate of top left corner of the rectangle in canvas. Default value is 0, 0.
-		 * width, height - Width and height of the rectangle. Default value of width and height both are 200.
-		 * radius        - Radius of corner round. Default value is 20.
-		 * direction     - Direction of corner round. Boolean true means inward, false means outward. Default value is false.
-		 *
-		 * Example:
-		 * canvas.roundRect (0, 0, 200, 200, 30);
-		 * canvas.roundRect (50, 50, 100, 100, 30, true);
-		 */
 		S.roundRect = function(x, y, width, height, radius, direction) {
 			var Z = this;
 
@@ -232,62 +177,28 @@
 			this.fill();
 		};
 
-		/**
-		 * ### Draw SVG curve
-		 * canvas.svgCurve (x, y, size, svgPath)
-		 *
-		 * x, y    - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * size    - The pixel size of the curve.
-		 * svgPath - Value of property 'd' of SVG 'path' method.
-		 *             When create the curve by svg software, please move the origin of coordinate be 0,0.
-		 *             And keep the bigger size of height and width to 200px.
-		 *             Don't use AQ or T methon in svg software, browser canvas have not relative methon to render it.
-		 *
-		 * Example, draw a heart symbol:
-		 * canvas.svgCurve ('M100,30C60,7 0,7 0,76C0,131 100,190 100,190C100,190 200,131 200,76C200,7 140,7 100,30z', 0, 0, 200));
-		 */
 		S.svgCurve = function(x, y, size, svgPath) {
-			var Z = this, relativeX, relativeY, pathNumber, pathArray, svgpathArray, ax = function(n) {
+			var Z = this, relativeX, relativeY, pathNumber, pathArray, svgPathArray, svgCmd, ax = function(n) {
 				return ( relativeX = x + n * size / H);
 			}, ay = function(n) {
 				return ( relativeY = y + n * size / H);
 			};
-			svgpathArray = svgPath.replace(/ *([MZLHVCSQTA]) */gi, '|$1,').replace(/^\||\|[Z],/gi, '').split(/\|/);
+			svgPathArray = svgPath.replace(/ *([MZLHVCSQTA]) */gi, '|$1,').replace(/^\||\|[Z],/gi, '').split(/\|/);
 
 			Z.beginPath();
-			for (pathNumber in svgpathArray) {
-				pathArray = svgpathArray[pathNumber].split(/[, ]/);
-				// @formatter:off
-                (pathArray[0] === 'M') ? (Z.moveTo(ax(pathArray[1]), ay(pathArray[2]))):
-                (pathArray[0] === 'L') ? (Z.lineTo(ax(pathArray[1]), ay(pathArray[2]))):
-                (pathArray[0] === 'H') ? (Z.lineTo(ax(pathArray[1]), relativeY)):
-                (pathArray[0] === 'V') ? (Z.lineTo(relativeX, ay(pathArray[1]))):
-                (pathArray[0] === 'C') ? (Z.bezierCurveTo(ax(pathArray[1]), ay(pathArray[2]), ax(pathArray[3]), ay(pathArray[4]), ax(pathArray[5]), ay(pathArray[6]))):
-                (pathArray[0] === 'Q') && (Z.quadraticCurveTo(ax(pathArray[1]), ay(pathArray[2]), ax(pathArray[3]), ay(pathArray[4])));
-                // @formatter:on
+			for (pathNumber in svgPathArray) {
+				pathArray = svgPathArray[pathNumber].split(/[, ]/);
+				svgCmd = pathArray[0];
+		                (svgCmd === 'M') ? (Z.moveTo(ax(pathArray[1]), ay(pathArray[2]))):
+		                (svgCmd === 'L') ? (Z.lineTo(ax(pathArray[1]), ay(pathArray[2]))):
+		                (svgCmd === 'H') ? (Z.lineTo(ax(pathArray[1]), relativeY)):
+		                (svgCmd === 'V') ? (Z.lineTo(relativeX, ay(pathArray[1]))):
+		                (svgCmd === 'C') ? (Z.bezierCurveTo(ax(pathArray[1]), ay(pathArray[2]), ax(pathArray[3]), ay(pathArray[4]), ax(pathArray[5]), ay(pathArray[6]))):
+		                (svgCmd === 'Q') && (Z.quadraticCurveTo(ax(pathArray[1]), ay(pathArray[2]), ax(pathArray[3]), ay(pathArray[4])));
 			}
 			Z.closePath();
 		};
 
-		/**
-		 * ### Draw poker symbol
-		 * canvas.drawPokerSymbol   (x, y, size[, symbol])
-		 * canvas.strokePokerSymbol (x, y, size[, symbol])
-		 * canvas.fillPokerSymbol   (x, y, size[, symbol])
-		 *
-		 * x, y   - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * size   - The pixel size of symbol. Default value is 200.
-		 * symbol - The name of symbol.  Value is case insensitive and should be one of below:
-		 *          ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
-		 *          'h', 'd', 's', 'c' are abbreviation
-		 *          ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
-		 *          'O'(letter O) is abbreviation of 'JOKER'
-		 *          ['R', 'CROWN']  // crown, a part of crown, to jointing a crown of JOKER card
-		 *          ['N', 'NINE']  // Nine, bold '9' for jointing '99' pattern
-		 *
-		 * Example:
-		 * canvas.fillPokerSymbol ('hearts', 0, 0, 200);
-		 */
 		S.drawPokerSymbol = function(x, y, size, symbol) {
 			symbol = fixSymbol(symbol);
 			if (symbolPath[symbol])
@@ -302,19 +213,6 @@
 			this.fill();
 		};
 
-		/**
-		 * ### Draw crown
-		 * canvas.drawPokerCrown (x, y, size[, startColor, endColor[, fillColor]])
-		 *
-		 * x, y       - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * size       - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 * startColor - Start color of gradient background color. Default value is '#FDF98B'.
-		 * endColor   - End color of gradient background color. Default value is '#E7BD4F'.
-		 * fillColor  - Fill color of jewel of crown. Default value is '#FFFFFF'.
-		 *
-		 * Example:
-		 * canvas.drawPokerCrown(0, 0, 200);
-		 */
 		S.drawPokerCrown = function(x, y, size, startColor, endColor, fillColor) {
 			var Z = this, X = Z.fillPokerSymbol, Y = Z.fillRoundRect, fillLinGrad;
 
@@ -344,16 +242,6 @@
 			X.call(Z, ax(133), ay(J), as(P), 'h');
 		};
 
-		/**
-		 * ### Draw blank card
-		 * canvas.drawEmptyCard (x, y, size[, startColor, endColor])
-		 *
-		 * x, y       - The x, y coordinate of top left corner of card in canvas. Default value is 0, 0.
-		 * size       - Height pixel of card. The ratio of card width and height is fixed to 3:4. Default value is 200.
-		 *
-		 * Example:
-		 * canvas.drawEmptyCard(0, 0, 200);
-		 */
 		S.drawEmptyCard = function(x, y, size) {
 			var Z = this, fillLinGrad;
 
@@ -368,27 +256,6 @@
 		};
 
 		window.Poker = {
-			/**
-			 * ### Draw card number side
-			 * Poker.getCardImage  (size, suit, point)
-			 * Poker.getCardCanvas (size, suit, point)
-			 * Poker.getCardData   (size, suit, point)
-			 *
-			 * size  - Height pixel of card. The ratio of card width and height is fixed to 3:4.
-			 *         Default value is 200.
-			 * suit  - Poker suit. Value is case insensitive and should be one of below:
-			 *         ['h', 'hearts', 'd', 'diamonds', 's', 'spades', 'c', 'clubs']
-			 *         'h', 'd', 's', 'c' are abbreviation
-			 *         For joker, 'h' & 'd' means big joker, 's' & 'c' means little joker.
-			 *         Default value is 'h'.
-			 * point - Card point. Value is case insensitive and should be one of below:
-			 *         ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'O', 'JOKER']
-			 *         'O'(letter O) is abbreviation of 'JOKER'
-			 *         Default value is 'O'.
-			 *           *
-			 * Example:
-			 * document.body.appendChild(Poker.getCardCanvas(100, 'h', 'Q'));
-			 */
 			getCardImage : function(size, suit, point) {
 				var image = R.createElement('img');
 				image.src = this.getCardData(size, suit, point);
@@ -402,21 +269,6 @@
 			getCardData : function(size, suit, point) {
 				return this.getCardCanvas(size, suit, point).toDataURL();
 			},
-
-			/**
-			 * ### Draw card back side
-			 * Poker.getBackImage  (size[, foregroundColor, backgroundColor])
-			 * Poker.getBackCanvas (size[, foregroundColor, backgroundColor])
-			 * Poker.getBackData   (size[, foregroundColor, backgroundColor])
-			 *
-			 * size            - Height pixel of card. The ratio of card width and height is fixed to 3:4.
-			 *                   Default value is 200.
-			 * foregroundColor - Foreground color. Default value is '#BB5555'.
-			 * backgroundColor - Background color. Default value is '#AA2222'.
-			 *
-			 * Example:
-			 * document.body.appendChild(Poker.getBackCanvas(300, '#2E319C', '#7A7BB8'));
-			 */
 			getBackImage : function(size, foregroundColor, backgroundColor) {
 				var image = R.createElement('img');
 				image.src = this.getBackData(size, foregroundColor, backgroundColor);
