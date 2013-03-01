@@ -1,6 +1,8 @@
-Poker.JS [(demo)](http://tairraos.github.com/Poker.JS/)
+Poker.JS
 =================
 [Chinese version readme 中文版本读我文档](#chinese-version-readme)
+
+ Demo: <http://tairraos.github.com/Poker.JS/>
 
 # Usage
 
@@ -101,10 +103,12 @@ canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 <br>    
 ************************
 # Chinese version readme
-# 中文版本读我文档 [（演示）](http://tairraos.github.com/Poker.JS/)
+# 中文版本读我文档 
 ************************
 <br>
 <br>
+演示 <http://tairraos.github.com/Poker.JS/>
+
 # 使用方法
 
 首先，加载 poker.js
