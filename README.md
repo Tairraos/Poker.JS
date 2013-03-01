@@ -1,4 +1,4 @@
-Poker.JS
+Poker.JS [(demo)](http://tairraos.github.com/Poker.JS/)
 =================
 [Chinese version readme 中文版本读我文档](#chinese-version-readme)
 
@@ -101,7 +101,7 @@ canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 <br>    
 ************************
 # Chinese version readme
-# 中文版本读我文档
+# 中文版本读我文档 [（演示）](http://tairraos.github.com/Poker.JS/)
 ************************
 <br>
 <br>
