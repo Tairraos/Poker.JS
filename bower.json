@@ -1,0 +1,15 @@
+{
+  "name": "PokerJS",
+  "version": "1.0.0",
+  "main": "release/poker.min.js",
+  "ignore": [
+    "old_version",
+    "build",
+    "source",
+    ".gitignore"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
