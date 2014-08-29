@@ -1,30 +1,26 @@
 {
-  "name": "poker",
-  "version": "1.0.0",
-  "homepage": "https://github.com/Tairraos/Poker.JS",
-  "authors": [
-    "Xiaole Tao <xiaole.tao@gmail.com>"
-  ],
-  "description": "Poker.JS is a JS lib extend HTML5 canvas to draw vector poker card.",
-  "main": "./release/poker.min.js",
-  "moduleType": [
-    "globals"
-  ],
-  "keywords": [
-    "poker",
-    "canvas",
-    "vector",
-    "html5"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "build",
-    "demo",
-    "old_version",
-    "test",
-    "tests"
-  ]
+    "name": "pokerjs",
+    "version": "1.0.0",
+    "main": "release/poker.min.js",
+    "ignore": [
+        "old_version",
+        "build",
+        "source",
+        ".gitignore"
+    ],
+    "license": "MIT",
+    "description": "Poker.JS is a JS lib extend HTML5 canvas to draw vector poker card.",
+    "moduleType": [
+        "globals"
+    ],
+    "keywords": [
+        "poker",
+        "canvas",
+        "vector",
+        "html5"
+    ],
+    "authors": [
+        "Xiaole Tao <xiaole.tao@gmail.com>"
+    ],
+    "homepage": "https://github.com/Tairraos/Poker.JS"
 }
