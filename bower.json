@@ -1,5 +1,5 @@
 {
-  "name": "pokerjs",
+  "name": "poker-js",
   "version": "1.0.0",
   "main": "release/poker.min.js",
   "ignore": [
