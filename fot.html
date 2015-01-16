@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Focus On Tile</title>
+	<meta charset="utf-8">
+
+	<style>
+		#matrixPanel table {
+			font-family: arial;
+			margin: auto;
+			border: 1px solid #000;
+			border-radius: .3em;
+		}
+
+		#matrixPanel td {
+			width: 2em;
+			height: 2em;
+			text-align: center;
+			vertical-align: middle;
+			border: 3px solid #000;
+			border-radius: 0.25em;
+		}
+	</style>
+
+	<script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
+	<script>
+		$(function() {
+			'use strict';
+			var domMatrixPanel = $('#matrixPanel'),
+				domMatrixSize = $('#matrixSize'),
+				domFontSize = $('#fontSize'),
+				btnCmdHide = $('#cmdHide'),
+				domControlPanel = $('#controlPanel');
+
+			btnCmdHide.click(hideControlPanel);
+			domMatrixSize.on('change', generateMatrix);
+			domFontSize.on('change', setSize);
+
+			generateMatrix();
+
+			function generateMatrix() {
+				var domMatrix = domMatrixPanel.empty().append('<table></table>').find('table'),
+					size = domMatrixSize.val(),
+					tempLine, x, y;
+				setSize();
+				for (y = 1; y <= size; y++) {
+					tempLine = $('<tr></tr>');
+					for (x = 1; x <= size; x++) {
+						tempLine.append('<td>' + ((y - 1) * size + x) + '</td>');
+					}
+					domMatrix.append(tempLine);
+				}
+
+			}
+
+			function hideControlPanel() {
+				domControlPanel.hide();
+			}
+
+			function setSize() {
+				domMatrixPanel.find('table').css('font-size', domFontSize.val() + 'px');
+			}
+
+		});
+	</script>
+
+</head>
+
+<body>
+<div id="controlPanel">
+	<p>
+		1. 选择矩阵大小生成，然后点击隐藏控制项; <br>
+		2. windows按ctrl-p打印，mac按command-p打印;
+		3. 点更多设置，取消勾选“页眉和页脚”，并选择缩放到页面大小。
+		4. 点击打印。
+	</p>
+	矩阵大小：
+	<select id="matrixSize">
+		<option value="2">2</option>
+		<option value="3" selected>3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select><br>
+
+	格式大小：
+	<select id="fontSize">
+		<option value="20">20</option>
+		<option value="25">25</option>
+		<option value="30">30</option>
+		<option value="35">35</option>
+		<option value="40">40</option>
+		<option value="45">45</option>
+		<option value="50" selected>50</option>
+		<option value="55">55</option>
+		<option value="60">60</option>
+		<option value="65">65</option>
+		<option value="70">70</option>
+		<option value="75">75</option>
+		<option value="80">80</option>
+	</select><br>
+
+	<button id="cmdHide">隐藏控制项</button>
+</div>
+<div id="matrixPanel"></div>
+</body>
+</html>
