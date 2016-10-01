@@ -2,7 +2,7 @@ Poker.JS
 =================
 [Chinese version readme 中文版本读我文档](#chinese-version-readme)
 
- Demo: <http://tairraos.github.com/Poker.JS/>
+ Demo: <https://tairraos.github.io/Poker.JS/>
 
 # Usage
 
@@ -107,7 +107,7 @@ canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 ************************
 <br>
 <br>
-演示 <http://tairraos.github.com/Poker.JS/>
+演示 <https://tairraos.github.io/Poker.JS/>
 
 # 使用方法
 
