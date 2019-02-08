@@ -4,7 +4,7 @@
  * File for 99 point project only.
  * This file used some tricks and reduce readability, but minified file small and quickly.
  *
- * @author Xiaole Tao (http://xiaole.happylive.org)
+ * @author Xiaole Tao (http://tairraos.github.io)
  * @license MIT license source code.
  * @version 1.0
  */

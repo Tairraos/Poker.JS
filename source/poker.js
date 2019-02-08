@@ -2,7 +2,7 @@
  * Poker.JS
  * Project on https://github.com/Tairraos/Poker.JS
  *
- * @author Xiaole Tao (http://xiaole.happylive.org)
+ * @author Xiaole Tao (http://tairraos.github.io)
  * @license MIT license source code.
  * @version 1.0
  */
