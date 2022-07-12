@@ -101,10 +101,10 @@ canvas.drawPokerBack (375, 400, 100, '#7A7BB8', '#2E319C');
 ```
 <br>    
 <br>    
-************************
+************************  
 # Chinese version readme
 # 中文版本读我文档 
-************************
+************************  
 <br>
 <br>
 演示 <https://tairraos.github.io/Poker.JS/>
